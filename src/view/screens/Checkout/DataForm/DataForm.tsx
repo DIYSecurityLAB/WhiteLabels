@@ -16,7 +16,7 @@ import { FaPix } from 'react-icons/fa6';
 import { toast } from 'react-toastify';
 import BankTransf from '../../../assets/bankIcon.png';
 import BoletoIcon from '../../../assets/BoletoIcon.png';
-import JohnGaltWhiteLogo from '../../../assets/logo/Logo-type.svg';
+import JohnGaltWhiteLogo from '../../../assets/logo/Logo_type.svg';
 import PayPalIcon from '../../../assets/paypalIcon.png';
 import SwiftIcon from '../../../assets/swiftIcon.png';
 import WiseIcon from '../../../assets/wiseIcon.png';

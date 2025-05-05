@@ -1,4 +1,4 @@
-import AlfredWhiteLogo from '@/view/assets/logo/logo-type.svg';
+import AlfredWhiteLogo from '@/view/assets/logo/Logo_type.svg';
 import { Loader } from '@/view/components/Loader';
 import { useScaleFactor } from '@/view/hooks/useScaleFactor';
 import { useWindowSize } from '@/view/utils/useWindowSize';

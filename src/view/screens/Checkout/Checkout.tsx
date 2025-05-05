@@ -1,4 +1,4 @@
-import JohnGaltWhiteLogo from '@/view/assets/logo/logo-type.svg';
+import JohnGaltWhiteLogo from '@/view/assets/logo/Logo_type.svg';
 import SocialButtons from '@/view/components/SocialButtons';
 import { useState } from 'react';
 import { FormProvider } from 'react-hook-form';

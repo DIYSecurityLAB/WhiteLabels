@@ -1,5 +1,5 @@
 import { useLanguage } from '@/domain/locales/Language';
-import JohnGaltWhiteLogo from '@/view/assets/logo/logo-type.svg';
+import JohnGaltWhiteLogo from '@/view/assets/logo/Logo_type.svg';
 import { Background } from '@/view/components/BackgroundAnimatedProduct';
 import { Loader } from '@/view/components/Loader';
 import { useAuth } from '@/view/hooks/useAuth';
