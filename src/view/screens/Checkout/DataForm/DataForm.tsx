@@ -1,4 +1,3 @@
-import JohnGaltWhiteLogo from '@/view/assets/logo/logo-type.svg';
 import { PaymentLoader } from '@/view/components/PaymentLoader';
 import { UserLevelBadge } from '@/view/components/UserLevelBadge';
 import classNames from 'classnames';
@@ -17,6 +16,7 @@ import { FaPix } from 'react-icons/fa6';
 import { toast } from 'react-toastify';
 import BankTransf from '../../../assets/bankIcon.png';
 import BoletoIcon from '../../../assets/BoletoIcon.png';
+import JohnGaltWhiteLogo from '../../../assets/logo/Logo-type.svg';
 import PayPalIcon from '../../../assets/paypalIcon.png';
 import SwiftIcon from '../../../assets/swiftIcon.png';
 import WiseIcon from '../../../assets/wiseIcon.png';
