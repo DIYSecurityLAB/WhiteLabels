@@ -1,3 +1,4 @@
+import { useWhiteLabel } from '@/context/WhiteLabelContext';
 import {
   ArrowPathIcon,
   ChevronDownIcon,
@@ -19,18 +20,32 @@ const Button = ({
   onClick: () => void;
   children: React.ReactNode;
   variant?: string;
-}) => (
-  <button
-    onClick={onClick}
-    className={`px-6 py-3 rounded-3xl font-bold text-sm sm:text-base transition duration-300 ${
-      variant === 'outline'
-        ? 'border-2 border-[#ff007a] text-[#ff007a] hover:bg-[#ff007a] hover:text-white'
-        : 'bg-[#ff007a] text-white hover:bg-[#c40963]'
-    }`}
-  >
-    {children}
-  </button>
-);
+}) => {
+  const { config } = useWhiteLabel();
+
+  return (
+    <button
+      onClick={onClick}
+      className={`px-6 py-3 rounded-3xl font-bold text-sm sm:text-base transition duration-300 ${
+        variant === 'outline' ? `border-2` : ``
+      }`}
+      style={
+        variant === 'outline'
+          ? {
+              borderColor: config.colors.primary,
+              color: config.colors.primary,
+              backgroundColor: 'transparent',
+            }
+          : {
+              backgroundColor: config.colors.primary,
+              color: 'white',
+            }
+      }
+    >
+      {children}
+    </button>
+  );
+};
 
 interface ConfirmInfosModalProps {
   isOpen: boolean;
@@ -63,6 +78,7 @@ export default function ConfirmInfosModal({
   cupom,
   alfredFeePercentage,
 }: ConfirmInfosModalProps) {
+  const { config } = useWhiteLabel();
   const {
     onchainFee,
     btcToBrl,
@@ -106,39 +122,56 @@ export default function ConfirmInfosModal({
     return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 overflow-y-auto">
+    <div
+      className="fixed inset-0 flex items-center justify-center z-50 overflow-y-auto"
+      style={{ backgroundColor: `${config.colors.background}80` }}
+    >
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.9 }}
         transition={{ duration: 0.3 }}
-        className="bg-[#040311] p-6 rounded-xl max-w-lg shadow-lg relative w-full max-h-[90vh] overflow-y-auto"
+        className="p-6 rounded-xl max-w-lg shadow-lg relative w-full max-h-[90vh] overflow-y-auto"
         style={{
           scrollbarWidth: 'thin',
-          scrollbarColor: '#040311 #0d131f',
+          scrollbarColor: `${config.colors.secondary} ${config.colors.backgroundSecondary}`,
+          backgroundColor: config.colors.secondary,
         }}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-white transition"
+          className="absolute top-4 right-4 hover:opacity-80 transition"
+          style={{ color: config.colors.text }}
         >
           <XMarkIcon className="w-6 h-6" />
         </button>
 
         <div className="text-center mb-6">
-          <h2 className="text-2xl text-white font-semibold">
+          <h2
+            className="text-2xl font-semibold"
+            style={{ color: config.colors.text }}
+          >
             {t('confirm_infos.title')}
           </h2>
-          <p className="text-sm text-gray-300 mt-2">
+          <p
+            className="text-sm mt-2"
+            style={{ color: `${config.colors.text}99` }}
+          >
             {t('confirm_infos.description')}
           </p>
         </div>
 
-        <div className="space-y-6 text-white">
+        <div className="space-y-6" style={{ color: config.colors.text }}>
           {/* Seção de Valor */}
-          <div className="bg-[#1a1d2b] p-4 rounded-lg">
+          <div
+            className="p-4 rounded-lg"
+            style={{ backgroundColor: config.colors.backgroundSecondary }}
+          >
             <div className="flex items-center space-x-2">
-              <CurrencyDollarIcon className="w-6 h-6 text-[#ff007a]" />
+              <CurrencyDollarIcon
+                className="w-6 h-6"
+                style={{ color: config.colors.primary }}
+              />
               <h3 className="text-lg font-semibold">
                 {t('confirm_infos.amount_section.title')}
               </h3>
@@ -157,18 +190,28 @@ export default function ConfirmInfosModal({
 
           {/* Toggle Meus Dados */}
           <div
-            className="bg-[#1a1d2b] p-4 rounded-lg cursor-pointer"
+            className="p-4 rounded-lg cursor-pointer"
+            style={{ backgroundColor: config.colors.backgroundSecondary }}
             onClick={() => setIsDataVisible(!isDataVisible)}
           >
             <div className="flex items-center space-x-2">
-              <InformationCircleIcon className="w-6 h-6 text-[#ff007a]" />
+              <InformationCircleIcon
+                className="w-6 h-6"
+                style={{ color: config.colors.primary }}
+              />
               <h3 className="text-lg font-semibold">
                 {t('confirm_infos.user_data_section.title')}
               </h3>
               {isDataVisible ? (
-                <ChevronUpIcon className="w-5 h-5 text-[#ff007a]" />
+                <ChevronUpIcon
+                  className="w-5 h-5"
+                  style={{ color: config.colors.primary }}
+                />
               ) : (
-                <ChevronDownIcon className="w-5 h-5 text-[#ff007a]" />
+                <ChevronDownIcon
+                  className="w-5 h-5"
+                  style={{ color: config.colors.primary }}
+                />
               )}
             </div>
             {isDataVisible && (
@@ -209,18 +252,28 @@ export default function ConfirmInfosModal({
 
           {/* Toggle Taxas */}
           <div
-            className="bg-[#1a1d2b] p-4 rounded-lg cursor-pointer"
+            className="p-4 rounded-lg cursor-pointer"
+            style={{ backgroundColor: config.colors.backgroundSecondary }}
             onClick={() => setIsTaxVisible(!isTaxVisible)}
           >
             <div className="flex items-center space-x-2">
-              <ArrowPathIcon className="w-6 h-6 text-[#ff007a]" />
+              <ArrowPathIcon
+                className="w-6 h-6"
+                style={{ color: config.colors.primary }}
+              />
               <h3 className="text-lg font-semibold">
                 {t('confirm_infos.fees_section.title')}
               </h3>
               {isTaxVisible ? (
-                <ChevronUpIcon className="w-5 h-5 text-[#ff007a]" />
+                <ChevronUpIcon
+                  className="w-5 h-5"
+                  style={{ color: config.colors.primary }}
+                />
               ) : (
-                <ChevronDownIcon className="w-5 h-5 text-[#ff007a]" />
+                <ChevronDownIcon
+                  className="w-5 h-5"
+                  style={{ color: config.colors.primary }}
+                />
               )}
             </div>
             {isTaxVisible && (
@@ -267,9 +320,15 @@ export default function ConfirmInfosModal({
           </div>
 
           {/* Resumo Final */}
-          <div className="bg-[#1a1d2b] p-4 rounded-lg">
+          <div
+            className="p-4 rounded-lg"
+            style={{ backgroundColor: config.colors.backgroundSecondary }}
+          >
             <div className="flex items-center space-x-2">
-              <ArrowPathIcon className="w-6 h-6 text-[#ff007a]" />
+              <ArrowPathIcon
+                className="w-6 h-6"
+                style={{ color: config.colors.primary }}
+              />
               <h3 className="text-lg font-semibold">
                 {t('confirm_infos.final_summary.title')}
               </h3>

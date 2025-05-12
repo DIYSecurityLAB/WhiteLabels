@@ -1,0 +1,299 @@
+{
+  "header": {
+    "links": ["Inicio", "Acerca de", "Tarifas", "Términos", "Soporte"]
+  },
+  "about": {
+    "title": "Explora Bitcoin como un verdadero pionero, con total libertad",
+    "titles": [
+      "Explora Bitcoin como un verdadero pionero, con total libertad",
+      "Privacidad como máxima prioridad",
+      "Seguridad garantizada en la frontera digital",
+      "Transacciones rápidas como cohetes",
+      "Soporte siempre en órbita",
+      "La libertad de explorar, la seguridad de una base"
+    ],
+    "paragraphs": [
+      "En Strategy Mars, creemos que la libertad financiera debe ser tan vasta como el espacio. Ofrecemos una plataforma P2P (peer-to-peer) donde puedes negociar Bitcoin directamente, sin procesos burocráticos de verificación de identidad (KYC). Aquí, tu privacidad y autonomía son respetadas en cada transacción, como un verdadero explorador espacial.",
+      "Así como los pioneros de Marte necesitarían privacidad en sus comunicaciones, entendemos que cada persona tiene el derecho de gestionar sus recursos financieros sin interferencias. Al elegir Strategy Mars, estás eligiendo una plataforma donde tu identidad permanece tuya. Nuestro modelo opera basado en la confianza entre exploradores, creando un ambiente donde todos pueden negociar con seguridad sin renunciar a su privacidad.",
+      "Incluso sin requerir KYC, nuestra seguridad es tan robusta como un búnker marciano. Nuestra plataforma ofrece un sistema avanzado de verificación y monitoreo, asegurando que todas las transacciones sean legítimas y seguras. Cada vendedor es responsable de la calidad del Bitcoin negociado, y nuestro equipo está siempre listo para resolver cualquier problema, asegurando que todos cumplan sus responsabilidades como miembros de la colonia.",
+      "Olvídate de los retrasos de las comunicaciones interplanetarias. En Strategy Mars, las transacciones ocurren a la velocidad de la luz, de forma simple y transparente. Sin intermediarios, negocias directamente con otros exploradores, manteniendo la seguridad necesaria para garantizar que todo transcurra sin problemas.",
+      "Como una buena base de comando, nuestro equipo de soporte está siempre disponible para resolver problemas, mediar disputas y garantizar que tu experiencia de compra y venta sea tranquila. Si algo no sale según lo planeado, nuestra estructura de resolución de conflictos está lista para actuar y proteger los intereses de nuestros colonos digitales.",
+      "Con Strategy Mars, tienes la oportunidad de unirte a una comunidad que valora la libertad financiera y la privacidad tanto como la seguridad. Creemos en un mercado más justo, donde la confianza es la base de todas las operaciones. Únete a nosotros y experimenta la verdadera libertad al negociar Bitcoin, como un auténtico explorador de nuevos mundos financieros."
+    ]
+  },
+  "checkout": {
+    "missingLogin": "Por favor, ingresa tu usuario y contraseña.",
+    "applyCouponFirst": "Aplica el cupón antes de continuar.",
+    "usernameLengthError": "El nombre de usuario debe tener al menos 6 caracteres.",
+    "passwordLengthError": "La contraseña debe tener al menos 6 caracteres.",
+    "missingFields": "Por favor, completa todos los campos obligatorios.",
+    "title": "Compra de Bitcoin y Pago",
+    "buy": "Comprar",
+    "sell": "Vender",
+    "brl_placeholder": "Ingresa el monto en BRL",
+    "usd_placeholder": "Ingresa el monto en USDT",
+    "depix_placeholder": "Monto en Depix",
+    "btc_placeholder": "Monto en BTC",
+    "usdt_placeholder": "Monto en USDT",
+    "proceed_button": "Proceder",
+    "transaction_error": "Transacciones disponibles las 24 horas del día.",
+    "min_value_error": "El monto mínimo para compra de BTC es 200 BRL.",
+    "min_value_error_usdt": "El monto mínimo para compra de USDT es 500 BRL.",
+    "wallet_error_below_700": "Para montos inferiores a 700 BRL, solo se permiten carteras Liquid y Lightning.",
+    "payment_error_above_5000": "Para pagos vía Pix con monto superior a 5.000 BRL, es necesario completar el formulario 'Validación para transacciones anónimas'.",
+    "first_purchase_limit_error": "Tu primera compra está limitada a 500 BRL.",
+    "bitcoin_message": "BITCOIN en tus manos, con privacidad y sin burocracia",
+    "opening_hours": "Strategy Mars disponible 24h, ¡todos los días!",
+    "tooltip_btc": {
+      "title": "Transacciones con BTC:",
+      "minimum_value": "El monto mínimo para transacciones con Bitcoin es de 200 BRL.",
+      "pix_limit": "Para pagos vía Pix con montos superiores a 5.000 BRL, es necesario completar el formulario 'Validación para transacciones anónimas', que verifica tu ingreso y autenticidad."
+    },
+    "tooltip_usdt": {
+      "title": "Transacciones con USDT:",
+      "minimum_value": "El monto mínimo para transacciones con USDT es de 550 BRL.",
+      "maximum_value": "No hay monto máximo para transacciones en Strategy Mars."
+    },
+    "tooltip_attention": {
+      "title": "Atención, Explorador:",
+      "message": "Tu primera misión estará limitada a 500 BRL para validar tu perfil. Después de la primera compra exitosa, podrás realizar transacciones mayores, respetando los límites establecidos por la base."
+    },
+    "usdt_to_usd_error": "No es posible comprar USDT con USDT."
+  },
+  "paymentFailure": {
+    "title": "Fallo en el pago",
+    "description": "¡Houston, tenemos un problema! Hubo un fallo al procesar tu pago. Intenta nuevamente o contacta con nuestro centro de comando.",
+    "retryButton": "INTENTAR DE NUEVO",
+    "whatsapp": "CONTACTAR SOPORTE"
+  },
+  "paymentSuccess": {
+    "title": "¡Misión cumplida! ¡Pago realizado con éxito!",
+    "description": "Tu transacción se ha completado con éxito.",
+    "transactionTime": "Recibirás tu cripto en la cartera proporcionada. El procesamiento puede llevar de 5 minutos a 6 horas, espera en la base.",
+    "whatsapp": "HABLAR CON CONTROL",
+    "redirectButton": "VOLVER A LA BASE",
+    "Ballon": "¡Vuelve pronto, explorador!"
+  },
+  "paymentReview": {
+    "title": "Pago en Análisis",
+    "description": "Tu transacción está siendo analizada por nuestro equipo para garantizar máxima seguridad. En pocas horas, el pago será procesado. Mantén contacto con la base.",
+    "redirectButton": "VOLVER A LA BASE",
+    "whatsapp": "HABLAR CON CONTROL"
+  },
+  "fees": {
+    "title": "Tarifas",
+    "dailyLimit1": "De 200 BRL a 6.000 BRL por día:",
+    "above1000": "4,99% para transacciones hasta 6.000 BRL.",
+    "below1000": "Tarifa variable con cupón de influencer.",
+    "dailyLimit2": "De 6.001 BRL en adelante:",
+    "fixedRate": "5,99% de tarifa fija.",
+    "couponsTitle": "Cupón",
+    "coupons": "Para valores hasta 6.000 BRL, al utilizar un cupón, la tarifa varía según el influencer. Para valores superiores a 6.000 BRL, al utilizar un cupón, la tarifa se reduce a 4,99%.",
+    "convertibilityRates": "Las tarifas son variables para transacciones que involucran Pix a LBTC y envío de Bitcoin on-chain.",
+    "convertibilityRatesTile": "Tarifas de Convertibilidad",
+    "reflectionTitle": "Reflexión: Bitcoin como Herramienta Libertaria",
+    "reflection1": "Si Bitcoin es realmente una herramienta libertaria, ¿por qué los gobiernos aún permiten que las personas compren BTC legalmente?",
+    "reflection2": "La respuesta está en el control: para adquirir BTC a través de exchanges tradicionales, necesitas proporcionar todos tus datos personales (KYC). Así, el gobierno rastrea dónde está tu Bitcoin y quién lo posee.",
+    "reflection3": "El verdadero costo no está solo en la tarifa de transacción, sino en el momento del retiro. Además de la tarifa fija, tus transacciones quedan expuestas al control gubernamental, con impuestos de hasta el 27,5% dependiendo de tu ubicación.",
+    "reflection4": "La 'conveniencia' de los exchanges tradicionales puede costar tu privacidad financiera. Al entregar tus datos personales, nunca sabes cómo podrían ser utilizados en el futuro.",
+    "privacyTitle": "Privacidad y Anonimato",
+    "privacy1": "En Strategy Mars, tu privacidad es protegida como un recurso valioso.",
+    "privacy2": "Comienza a negociar a partir de 200 BRL usando las redes Liquid, onchain y Lightning."
+  },
+  "termsOfUse": {
+    "title": "Términos de Uso",
+    "platformTitle": "Sobre la plataforma",
+    "platformDescription": "Strategy Mars es una plataforma P2P (peer-to-peer) que ofrece un ambiente seguro para la negociación de Bitcoin (BTC). A diferencia de los exchanges tradicionales, no tenemos transacciones instantáneas. Nuestro modelo P2P asegura que negocies directamente con otros usuarios, siempre con la garantía de que las transacciones se llevarán a cabo de manera eficiente y confiable.\n\nTodos los proveedores de liquidez en Strategy Mars hacen un depósito en BTC, que se retiene hasta la finalización de la transacción, asegurando que ambas partes cumplan con lo acordado.",
+    "transactionsTitle": "Cómo funcionan las transacciones",
+    "transactionsSteps": [
+      "Elige el monto deseado, selecciona la red y proporciona la dirección de tu cartera.",
+      "Proporciona un número de teléfono para el envío del comprobante de pago.",
+      "Recuerda aceptar los Términos de Uso y las Tarifas aplicables para continuar."
+    ],
+    "transactionLimitsTitle": "Límites de transacción",
+    "transactionLimitsDescription": "El monto mínimo para la primera compra es de 500 BRL. El monto máximo diario permitido para transacciones es de 5.000 BRL. Para montos superiores a este límite, contacta al soporte para obtener más información y aprobación.",
+    "transactionDurationTitle": "Duración de la transacción",
+    "transactionDurationDescription": "El tiempo de procesamiento de una transacción puede variar entre 30 minutos y 24 horas, dependiendo de varios factores, como procesamiento bancario, envío de comprobantes y congestión de redes. Si el mercado fluctúa durante la negociación, pueden ocurrir retrasos adicionales.",
+    "kycPoliciesTitle": "Políticas de KYC y responsabilidad",
+    "kycPoliciesDescription": "En Strategy Mars, no requerimos KYC (Know Your Customer) para realizar transacciones, ya que creemos en la privacidad y libertad de nuestros exploradores. La responsabilidad de la verificación de identidad recae en los bancos que permiten el uso de cuentas bancarias.\n\nNuestro papel es garantizar que las transacciones ocurran de manera eficiente y segura, funcionando como un marketplace para el intercambio de valores entre usuarios.",
+    "globalReachTitle": "Alcance global y métodos de pago",
+    "globalReachDescription1": "Las operaciones se realizan globalmente, ofreciendo diversas opciones de pago.",
+    "globalReachDescription2": "Los proveedores operan de forma independiente, sin vínculos específicos con bancos o entidades reguladoras.",
+    "globalReachDescription3": "El uso de la plataforma implica automáticamente la aceptación total de los Términos de Uso.",
+    "disputesTitle": "Disputas y resoluciones",
+    "disputesStep1": "Abre una solicitud de soporte o contáctanos vía WhatsApp.",
+    "disputesStep2": "Se aplicarán sanciones financieras en casos de deshonestidad.",
+    "disputesStep3": "Las disputas infundadas estarán sujetas a sanciones del 10% del valor del pedido.",
+    "disputesStep4": "El tiempo normal de resolución puede variar de 7 a 30 días, pudiendo extenderse dependiendo del tiempo de análisis de los bancos.",
+    "conductTitle": "Conducta y compromiso",
+    "conductDescription1": "Nuestro compromiso es mantener un ambiente seguro y respetuoso para todos los exploradores.",
+    "conductPenalty1": "10%: Difamación sin intento previo de resolución.",
+    "conductPenalty2": "20%: Difamación durante el análisis de un arbitraje.",
+    "conductPenalty3": "100%: Intentos de fraude o negociaciones con fondos ilícitos.",
+    "conductPenalty4": "125%: Mala fe por parte del proveedor o no envío de fondos a la contraparte después de la recepción.",
+    "conductDescription2": "Los exploradores con comportamiento inapropiado serán expulsados permanentemente de la colonia.",
+    "footer": "Gracias por elegir Strategy Mars. Nuestro compromiso es con tu libertad y privacidad."
+  },
+  "support": {
+    "sendMessage": "Envía un mensaje a la base",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo electrónico",
+    "message": "Mensaje",
+    "send": "Enviar",
+    "successMessage": "¡Mensaje enviado con éxito! Nuestro equipo responderá en breve.",
+    "errorMessage": "Ocurrió un error al enviar el mensaje. Por favor, inténtalo nuevamente."
+  },
+  "buycheckout": {
+    "coldWalletError": "La dirección de la cartera no puede estar vacía.",
+    "invalidColdWalletErrorLiquid": "Dirección de cartera Liquid inválida.",
+    "invalidColdWalletErrorOnchain": "Dirección de cartera Onchain inválida.",
+    "invalidColdWalletErrorLightning": "Dirección de cartera Lightning inválida.",
+    "transactionNumberError": "El número de teléfono es obligatorio.",
+    "invalidTransactionNumberError": "Ingresa un número de teléfono válido (9 a 15 dígitos).",
+    "termsAndFeesAlert": "Debes aceptar las tarifas, términos de uso y la confirmación de los datos enviados",
+    "networkSelectionAlert": "Debes seleccionar una red de Bitcoin antes de continuar.",
+    "paymentError": "Error al procesar el pago.",
+    "invalidColdWalletErrorPolygon": "Dirección de cartera inválida para la red Polygon.",
+    "invalidColdWalletErrorTron": "Dirección de cartera inválida para la red Tron.",
+    "invalidNetworkForUSDT": "Para USDT, selecciona solo Liquid, Polygon o Tron.",
+    "pixKeyCopied": "¡Clave PIX copiada al portapapeles!",
+    "makePayment": "Confirmar pago",
+    "paymentNotConfirmed": "Pago aún no confirmado. Intenta nuevamente.",
+    "couponInactive": "El cupón no está activo.",
+    "couponExpired": "El cupón ha expirado.",
+    "couponUsageLimitReached": "El cupón ha alcanzado su límite de uso.",
+    "couponValid": "¡El cupón es válido! Descuento aplicado.",
+    "couponCheckError": "Cupón inválido. Contáctanos.",
+    "value": "Monto",
+    "valueCrypto": "Monto Convertido",
+    "selectNetwork": "Selecciona la Red",
+    "selectPaymentMethod": "Selecciona el Método de Pago",
+    "bitcoinWallet": "Cartera",
+    "contactNumber": "Número de contacto",
+    "couponPlaceholder": "Ingresa el código de explorador",
+    "apply": "Aplicar",
+    "acceptFees": "Acepto las tarifas",
+    "acceptTerms": "Acepto los términos y condiciones",
+    "confirmDate": "Confirmo que los datos enviados son correctos",
+    "getPixKey": "Finalizar Pago",
+    "missingFields": "Los datos ingresados están incompletos o son inválidos. Corrige antes de continuar.",
+    "applyCouponFirst": "aplica el cupón antes de continuar",
+    "attention": "Atención, Explorador:",
+    "instruction": "Para completar tu misión, haz clic en el botón de abajo después de realizar el pago.",
+    "timeRemaining": "Tiempo restante",
+    "minutes": "minutos",
+    "verifying": "Verificando...",
+    "scanQRCode": "Escanea el Código QR",
+    "qrCode100kAlt": "Código QR para R$ 100.000",
+    "bitcoinPurchaseWarning": "Atención: Estás comprando",
+    "alfredLogoAlt": "Logo Strategy Mars",
+    "copyPixKey": "Copiar clave PIX",
+    "paymentMethod": {
+      "PIX": "PIX",
+      "WISE": "Wise",
+      "TICKET": "Boleto Bancario",
+      "SWIFT": "Swift",
+      "PAYPAL": "PayPal",
+      "BANK_TRANSFER": "Transferencia Bancaria",
+      "TED": "TED",
+      "CASH": "Depósito en Efectivo"
+    },
+    "paymentLevelRestriction": {
+      "ted": "TED disponible solo para nivel Colono (2) o superior",
+      "cash": "Depósito en efectivo disponible solo para nivel Comandante (3) o superior",
+      "general": "Este método de pago no está disponible para tu nivel actual"
+    },
+    "contactTooltip": {
+      "message": "Por seguridad, es necesario iniciar sesión con tu nombre de usuario y contraseña para que puedas acceder a la plataforma en cualquier dispositivo y liberar futuras compras, y valores mayores.",
+      "alternative": "Si no quieres proporcionar tu número real, puedes ingresar uno ficticio, como 1111111111."
+    },
+    "loginTooltip": {
+      "message": "Por seguridad, es necesario iniciar sesión con tu nombre de usuario y contraseña para que puedas acceder a la plataforma en cualquier dispositivo y liberar futuras compras, y valores mayores.",
+      "alternative": "Tus credenciales serán utilizadas únicamente para autenticación."
+    },
+    "usernamePlaceholder": "ID de Explorador",
+    "passwordPlaceholder": "Contraseña"
+  },
+  "confirm_infos": {
+    "title": "Confirmar Información",
+    "description": "Por favor, revisa la información de la transacción antes de confirmar.",
+    "amount_section": {
+      "title": "Monto",
+      "brl_label": "BRL",
+      "crypto_label": "En Cripto:"
+    },
+    "user_data_section": {
+      "title": "Mis Datos",
+      "wallet": "Cartera",
+      "contact_number": "Número de Contacto",
+      "coupon": "Cupón",
+      "coupon_none": "Ninguno",
+      "network": "Red",
+      "payment_method": "Método de Pago"
+    },
+    "fees_section": {
+      "title": "Tarifas",
+      "conversion_fee": "Tarifa de Conversión",
+      "conversion_fee_value": "(2.5%)",
+      "onchain_fee": "Tarifa de la Red Onchain",
+      "onchain_fee_variable": "(variable)",
+      "john_galt_fee": "Tarifa Strategy Mars",
+      "total_fees": "Total de Tarifas"
+    },
+    "final_summary": {
+      "title": "Resumen Final",
+      "expected_amount": "Monto Esperado (BRL)",
+      "expected_amount_crypto": "Monto Esperado (Cripto)"
+    },
+    "buttons": {
+      "cancel": "Cancelar",
+      "confirm": "Confirmar"
+    }
+  },
+  "guide": {
+    "imageStep": "¡Hola, explorador! ¡Bienvenido a Strategy Mars! Soy tu guía para transacciones de Bitcoin sin KYC, de forma simple y segura, como verdaderos pioneros digitales.",
+    "brlStep": "Ingresa el monto en BRL que deseas convertir a Bitcoin.",
+    "proceedButtonStep": "Después de ingresar el monto, haz clic en el botón 'Proceder' para continuar con la compra."
+  },
+  "userLevels": {
+    "title": "Tu Nivel",
+    "iniciante": {
+      "name": "Explorador",
+      "description": "Límite Inicial: Hasta 2 transacciones de hasta R$500 cada una en el mismo día.",
+      "validation": "Después de estas dos transacciones, es necesario esperar 24 horas para análisis."
+    },
+    "básico": {
+      "name": "Pionero",
+      "description": "Límite de hasta R$5.000 por día",
+      "requirements": "Pasa por la validación inicial de 24 horas después de las 2 primeras transacciones."
+    },
+    "intermediário": {
+      "name": "Colono",
+      "description": "Límite de hasta R$10.000 por día",
+      "requirements": "Haber realizado 3 compras."
+    },
+    "avançado": {
+      "name": "Comandante",
+      "description": "Límite de hasta R$35.000 por día",
+      "requirements": "Haber realizado 4 compras y movido R$50.000 en total."
+    },
+    "expert": {
+      "name": "Almirante",
+      "description": "Límite de hasta R$50.000 por día",
+      "requirements": "Haber transaccionado un total de R$100.000."
+    },
+    "master": {
+      "name": "Emperador",
+      "description": "Límite de hasta R$150.000 por día",
+      "requirements": "Haber transaccionado un total de R$250.000."
+    },
+    "dailyLimitExceeded": "Límite diario excedido para tu nivel actual.",
+    "transactionLimitExceeded": "Límite de transacciones diarias alcanzado.",
+    "paymentMethods": {
+      "ted": "TED disponible a partir del nivel Colono (2)",
+      "cash": "Depósito en efectivo disponible a partir del nivel Comandante (3)",
+      "all": "Todos los métodos de pago disponibles a partir del nivel Almirante (4)"
+    }
+  }
+}

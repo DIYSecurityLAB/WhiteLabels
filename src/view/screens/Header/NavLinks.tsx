@@ -1,6 +1,7 @@
+import { useWhiteLabel } from '@/context/WhiteLabelContext';
 import { PopoverGroup } from '@headlessui/react';
 import classNames from 'classnames';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { LanguageTexts } from '../../../domain/locales/Language';
@@ -18,6 +19,12 @@ export function NavLinks({ LinkCallBack }: NavLinksProps) {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { currentLang } = useCurrentLang();
+  const { config, loadHeaderFont } = useWhiteLabel();
+
+  // Certifique-se de que a fonte do cabeçalho seja carregada quando o componente for montado
+  useEffect(() => {
+    loadHeaderFont();
+  }, [loadHeaderFont]);
 
   const Links = [
     {
@@ -57,11 +64,23 @@ export function NavLinks({ LinkCallBack }: NavLinksProps) {
             key={index}
             onClick={() => handleOnLink(link.path, LinkCallBack)}
             className={classNames(
-              'text-xl sm:text-2xl lg:text-3xl font-extralight leading-6 text-white px-3 sm:px-5 py-2 transition-all text-center',
-              'hover:bg-white hover:text-black duration-300 ease-in-out',
+              'text-xl sm:text-2xl lg:text-3xl font-extralight leading-6 px-3 sm:px-5 py-2 transition-all text-center',
+              'hover:bg-opacity-20 duration-300 ease-in-out',
               'w-auto',
-              'font-orbitron',
+              'heading-font', // Classe que receberá a fonte dinâmica
             )}
+            style={{
+              color: config.colors.text,
+              fontFamily: `var(--font-headings, '${config.fonts.headings}')`, // Aplicação direta da fonte
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = config.colors.text;
+              e.currentTarget.style.color = config.colors.background;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '';
+              e.currentTarget.style.color = config.colors.text;
+            }}
           >
             {link.label}
           </button>

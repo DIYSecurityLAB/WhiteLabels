@@ -1,4 +1,4 @@
-import AlfredWhiteLogo from '@/view/assets/logo/Logo_type.svg';
+import { useWhiteLabel } from '@/context/WhiteLabelContext';
 import { Loader } from '@/view/components/Loader';
 import { useScaleFactor } from '@/view/hooks/useScaleFactor';
 import { useWindowSize } from '@/view/utils/useWindowSize';
@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { toast } from 'react-toastify';
 
@@ -22,6 +22,7 @@ export function Support() {
   const { t } = useTranslation();
   const { width } = useWindowSize();
   const { scaleFactor } = useScaleFactor();
+  const { config, getLogoByTheme } = useWhiteLabel();
 
   const IS_LARGE_SCREEN = width >= 768;
   const IS_ZOOM_BIGGER_THAN_100 = scaleFactor > 1 && IS_LARGE_SCREEN;
@@ -83,56 +84,106 @@ export function Support() {
           IS_ZOOM_BIGGER_THAN_100 && 'pt-16',
         )}
       >
-        <div className="w-full max-w-4xl  p-8 ">
+        <div className="w-full max-w-4xl p-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             <aside className="col-span-full md:col-span-6 flex flex-col items-center">
               <img
-                src={AlfredWhiteLogo}
-                alt="johngalt Logo"
+                src={getLogoByTheme('default', 'type')}
+                alt={`${config.name} Logo`}
                 className="pb-8 w-3/4"
               />
 
               <div className="flex flex-col gap-6 w-full max-w-[368px]">
                 <a
-                  href="https://api.whatsapp.com/send?phone=+5511911872097&text=Ol%C3%A1,%20Tudo%20bem?%0A%0APreciso%20de%20ajuda%20sobre%20os%20produtos..."
+                  href={`https://api.whatsapp.com/send?phone=${config.supportWhatsapp}&text=Ol%C3%A1,%20Tudo%20bem?%0A%0APreciso%20de%20ajuda%20sobre%20os%20produtos...`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4  border border-gray-600 rounded-[24px] shadow-sm hover:bg-[#000A13] transition"
+                  className="flex items-center gap-4 p-4 rounded-[24px] shadow-sm transition hover:bg-opacity-20"
+                  style={{
+                    borderColor: `${config.colors.text}33`,
+                    borderWidth: '1px',
+                    borderStyle: 'solid',
+                    backgroundColor: 'transparent',
+                    color: config.colors.text,
+                  }}
                 >
                   <FaWhatsapp size={32} className="text-green-500" />
-                  <span className="font-semibold text-lg text-gray-100">
-                    WhatsApp
-                  </span>
+                  <span className="font-semibold text-lg">WhatsApp</span>
                 </a>
-                <a
-                  href="https://www.instagram.com/alfredp2p/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4  border border-gray-600 rounded-[24px] shadow-sm hover:bg-[#000A13] transition"
-                >
-                  <FaInstagram size={32} className="text-pink-500" />
-                  <span className="font-semibold text-lg text-gray-100">
-                    Instagram
-                  </span>
-                </a>
-                <a
-                  href="https://x.com/alfredp2p"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4  border border-gray-600 rounded-[24px] shadow-sm hover:bg-[#000A13] transition"
-                >
-                  <FaXTwitter size={32} className="text-white" />
-                  <span className="font-semibold text-lg text-gray-100">X</span>
-                </a>
+
+                {/* Redes sociais dinâmicas baseadas na configuração do white label */}
+                {config.socialMedia.instagram && (
+                  <a
+                    href={config.socialMedia.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-[24px] shadow-sm transition hover:bg-opacity-20"
+                    style={{
+                      borderColor: `${config.colors.text}33`,
+                      borderWidth: '1px',
+                      borderStyle: 'solid',
+                      backgroundColor: 'transparent',
+                      color: config.colors.text,
+                    }}
+                  >
+                    <FaInstagram size={32} className="text-pink-500" />
+                    <span className="font-semibold text-lg">Instagram</span>
+                  </a>
+                )}
+
+                {config.socialMedia.twitter && (
+                  <a
+                    href={config.socialMedia.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-[24px] shadow-sm transition hover:bg-opacity-20"
+                    style={{
+                      borderColor: `${config.colors.text}33`,
+                      borderWidth: '1px',
+                      borderStyle: 'solid',
+                      backgroundColor: 'transparent',
+                      color: config.colors.text,
+                    }}
+                  >
+                    <FaXTwitter
+                      size={32}
+                      style={{ color: config.colors.text }}
+                    />
+                    <span className="font-semibold text-lg">X</span>
+                  </a>
+                )}
+
+                {/* Adicionar outras redes sociais se existirem */}
+                {config.socialMedia.facebook && (
+                  <a
+                    href={config.socialMedia.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-[24px] shadow-sm transition hover:bg-opacity-20"
+                    style={{
+                      borderColor: `${config.colors.text}33`,
+                      borderWidth: '1px',
+                      borderStyle: 'solid',
+                      backgroundColor: 'transparent',
+                      color: config.colors.text,
+                    }}
+                  >
+                    <FaFacebook size={32} className="text-blue-500" />
+                    <span className="font-semibold text-lg">Facebook</span>
+                  </a>
+                )}
               </div>
             </aside>
 
             <article className="col-span-full md:col-span-6 flex items-center justify-center">
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className="w-full max-w-[370px]  p-8 rounded-lg flex flex-col gap-y-6"
+                className="w-full max-w-[370px] p-8 rounded-lg flex flex-col gap-y-6"
               >
-                <h3 className="font-bold text-lg md:text-2xl text-center text-gray-100">
+                <h3
+                  className="font-bold text-lg md:text-2xl text-center"
+                  style={{ color: config.colors.text }}
+                >
                   {t('support.sendMessage')}
                 </h3>
 
@@ -141,30 +192,62 @@ export function Support() {
                     type="text"
                     {...register('firstName', { required: true })}
                     placeholder={t('support.firstName')}
-                    className="p-3 border border-gray-600 rounded-lg focus:outline-none  text-gray-100 bg-[#000A13]"
+                    className="p-3 rounded-lg focus:outline-none"
+                    style={{
+                      backgroundColor: config.colors.secondary,
+                      color: config.colors.text,
+                      borderColor: `${config.colors.text}33`,
+                      borderWidth: '1px',
+                      borderStyle: 'solid',
+                    }}
                   />
                   <input
                     type="text"
                     {...register('lastName', { required: true })}
                     placeholder={t('support.lastName')}
-                    className="p-3 border border-gray-600 rounded-lg focus:outline-none  text-gray-100 bg-[#000A13]"
+                    className="p-3 rounded-lg focus:outline-none"
+                    style={{
+                      backgroundColor: config.colors.secondary,
+                      color: config.colors.text,
+                      borderColor: `${config.colors.text}33`,
+                      borderWidth: '1px',
+                      borderStyle: 'solid',
+                    }}
                   />
                 </div>
                 <input
                   type="email"
                   {...register('email', { required: true })}
                   placeholder={t('support.email')}
-                  className="p-3 border border-gray-600 rounded-lg focus:outline-none  text-gray-100 bg-[#000A13]"
+                  className="p-3 rounded-lg focus:outline-none"
+                  style={{
+                    backgroundColor: config.colors.secondary,
+                    color: config.colors.text,
+                    borderColor: `${config.colors.text}33`,
+                    borderWidth: '1px',
+                    borderStyle: 'solid',
+                  }}
                 />
                 <textarea
                   {...register('message', { required: true })}
                   placeholder={t('support.message')}
-                  className="p-3 border border-gray-600 rounded-lg focus:outline-none  text-gray-100 bg-[#000A13]"
+                  className="p-3 rounded-lg focus:outline-none"
+                  style={{
+                    backgroundColor: config.colors.secondary,
+                    color: config.colors.text,
+                    borderColor: `${config.colors.text}33`,
+                    borderWidth: '1px',
+                    borderStyle: 'solid',
+                  }}
                 ></textarea>
 
                 <button
                   type="submit"
-                  className="w-full p-3 rounded-lg font-bold transition  border bg-[#ff007a] flex items-center justify-center text-white"
+                  className="w-full p-3 rounded-lg font-bold transition flex items-center justify-center hover:opacity-90"
+                  style={{
+                    backgroundColor: config.colors.primary,
+                    color: config.colors.text,
+                  }}
                   disabled={isLoading}
                 >
                   {t('support.send')}

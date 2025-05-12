@@ -1,11 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-primary: #ff007a;
+  --color-secondary: #000a13;
+  --color-accent: #f49300;
+  --color-bg: #000000;
+  --color-text: #ffffff;
+  --color-primary-hover: #c40963;
+  --color-secondary-hover: #001a2e;
+  --color-success: #28a745;
+  --color-error: #dc3545;
+  --color-warning: #ffc107;
+  --font-main: 'Lexend', sans-serif;
+  --font-headings: 'Orbitron', sans-serif;
+}
+
 * {
-  font-family: 'Lexend', serif, ui-sans-serif, system-ui;
+  font-family: var(--font-main);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-font {
+  font-family: var(--font-headings);
 }
 
 html {
@@ -155,4 +184,21 @@ html {
 
 .animate-fadeInPop {
   animation: fadeInPop 0.5s ease-out;
+}
+
+/* Adicionar classes utilitárias para as cores dinâmicas */
+.text-brand-primary {
+  color: var(--color-primary);
+}
+
+.bg-brand-primary {
+  background-color: var(--color-primary);
+}
+
+.hover\:bg-brand-primary-hover:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.border-brand-primary {
+  border-color: var(--color-primary);
 }

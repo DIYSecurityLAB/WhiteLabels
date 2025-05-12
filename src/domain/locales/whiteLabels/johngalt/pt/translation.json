@@ -1,0 +1,299 @@
+{
+  "header": {
+    "links": ["Início", "Sobre", "Taxas", "Termos", "Suporte"]
+  },
+  "about": {
+    "title": "Compra e venda de Bitcoin sem burocracia, com total liberdade",
+    "titles": [
+      "Compra e venda de Bitcoin sem burocracia, com total liberdade",
+      "Privacidade acima de tudo",
+      "Como garantimos a segurança?",
+      "Transações rápidas e sem complicação",
+      "Apoio sempre que necessário",
+      "A liberdade de negociar, a segurança de sempre"
+    ],
+    "paragraphs": [
+      "No johngalt, acreditamos que a liberdade financeira deve ser simples e acessível para todos. Por isso, oferecemos uma plataforma P2P (peer-to-peer) onde você pode comprar e vender Bitcoin de maneira direta, sem a necessidade de processos de verificação de identidade (KYC). Aqui, a privacidade e a autonomia são respeitadas em cada transação.",
+      "Sabemos que cada pessoa tem o direito de gerenciar seus recursos de forma discreta e sem interferências. Ao optar pelo johngalt, você está escolhendo um serviço onde a sua identidade e dados pessoais não são exigidos. Nosso modelo de operação é baseado na confiança entre compradores e vendedores, criando um ambiente onde todos podem negociar com segurança e sem comprometer sua privacidade.",
+      "Embora não solicitemos KYC, não comprometemos a segurança. Nossa plataforma oferece um sistema robusto de verificação e monitoramento, que garante que todas as transações realizadas sejam legítimas e seguras. Cada vendedor é responsável por garantir a qualidade do Bitcoin que está sendo negociado, e nossa equipe está sempre à disposição para solucionar eventuais problemas, garantindo que todos os envolvidos na negociação cumpram com suas responsabilidades.",
+      "Esqueça as longas filas de verificações e o excesso de documentação. No johngalt, as transações acontecem de forma rápida, simples e transparente. Sem intermediários, você lida diretamente com quem está do outro lado, sem perder a segurança necessária para garantir que tudo ocorra da melhor forma possível.",
+      "Entendemos que, ao operar sem KYC, o suporte ao cliente se torna essencial. Nossa equipe de atendimento está sempre disponível para resolver qualquer problema, mediar disputas e garantir que sua experiência de compra e venda seja tranquila e sem riscos. Caso algo não ocorra como esperado, nossa estrutura de resolução de disputas está pronta para agir e proteger os interesses de nossos usuários.",
+      "Com o johngalt, você tem a oportunidade de fazer parte de uma comunidade que valoriza a liberdade financeira e a privacidade, sem abrir mão da segurança. Nós acreditamos em um mercado mais justo, onde a confiança é o principal alicerce das transações. Junte-se a nós e experimente a verdadeira liberdade ao negociar Bitcoin."
+    ]
+  },
+  "checkout": {
+    "missingLogin": "Por favor, insira seu usuário e senha.",
+    "applyCouponFirst": "Aplique o cupom antes de continuar.",
+    "usernameLengthError": "O nome de usuário deve ter pelo menos 6 dígitos.",
+    "passwordLengthError": "A senha deve ter pelo menos 6 dígitos.",
+    "missingFields": "Por favor, preencha todos os campos obrigatórios.",
+    "title": "Compra de Bitcoin e Checkout",
+    "buy": "Comprar",
+    "sell": "Vender",
+    "brl_placeholder": "Digite o valor em BRL",
+    "usd_placeholder": "Digite o valor em USDT",
+    "depix_placeholder": "Valor em Depix",
+    "btc_placeholder": "Valor em BTC",
+    "usdt_placeholder": "Valor em USDT",
+    "proceed_button": "Prosseguir",
+    "transaction_error": "Transações só são permitidas todos os dias, das 8h às 22h no horário de Brasília.",
+    "min_value_error": "O valor mínimo para compra em BTC é 200 BRL.",
+    "min_value_error_usdt": "O valor mínimo para compra em USDT é 500 BRL.",
+    "wallet_error_below_700": "Para valores abaixo de 700 BRL, apenas carteiras Liquid e Lightning são permitidas.",
+    "payment_error_above_5000": "Para pagamentos via Pix com valor superior a 5.000 BRL, é necessário preencher o formulário 'Validação para transações anônimas'.",
+    "first_purchase_limit_error": "Sua primeira compra está limitada a 500 BRL.",
+    "bitcoin_message": "Compre BITCOIN com privacidade, anonimato e segurança",
+    "opening_hours": "johngalt disponível 24h!",
+    "tooltip_btc": {
+      "title": "Transações com BTC:",
+      "minimum_value": "O valor mínimo para transações com Bitcoin é de R$ 200.",
+      "pix_limit": "Para pagamentos via Pix com valores superiores a R$ 5.000, é necessário preencher o formulário 'Validação para transações anônimas', que comprova sua renda e autenticidade."
+    },
+    "tooltip_usdt": {
+      "title": "Transações com USDT:",
+      "minimum_value": "O valor mínimo para transações com USDT é de R$ 550.",
+      "maximum_value": "Não há valor máximo para transações no johngalt."
+    },
+    "tooltip_attention": {
+      "title": "Atenção:",
+      "message": "Sua primeira compra será limitada a R$ 500 para validarmos seu usuário. Após a primeira compra, você poderá realizar transações normalmente, respeitando os limites mencionados."
+    },
+    "usdt_to_usd_error": "Não é possível comprar USDT com USDT."
+  },
+  "paymentFailure": {
+    "title": "Falha no pagamento",
+    "description": "Houve um problema ao processar seu pagamento. Tente novamente ou entre em contato com o suporte.",
+    "retryButton": "TENTAR NOVAMENTE",
+    "whatsapp": "FALE CONOSCO"
+  },
+  "paymentSuccess": {
+    "title": "Pagamento concluído com sucesso!",
+    "description": "Sua transação foi concluída com sucesso.",
+    "transactionTime": "Você receberá sua cripto em sua carteira informada no checkout, o processamento pode levar de 5 minutos a 6 horas, por favor aguarde.",
+    "whatsapp": "FALE CONOSCO",
+    "redirectButton": "VOLTAR PARA O SITE",
+    "Ballon": "Volte logo!"
+  },
+  "paymentReview": {
+    "title": "Pagamento em Revisão",
+    "description": "Seu pagamento está em revisão para aumentar a segurança e evitar golpes. Estamos aguardando uma aprovação para garantir a proteção da sua transação. Em poucas horas, o pagamento será processado. Fique tranquilo.",
+    "redirectButton": "VOLTAR PARA O SITE",
+    "whatsapp": "FALE CONOSCO"
+  },
+  "fees": {
+    "title": "Taxas",
+    "dailyLimit1": "De 200 BRL a 6.000 BRL por dia:",
+    "above1000": "4,99% para transações até 6.000 BRL.",
+    "below1000": "Taxa variável com cupom de influencer.",
+    "dailyLimit2": "De 6.001 BRL em diante:",
+    "fixedRate": "5,99% de taxa fixa.",
+    "couponsTitle": "Cupom",
+    "coupons": "Para valores até 6.000 BRL, ao utilizar um cupom, a taxa varia de acordo com o influenciador. Para valores acima de 6.000 BRL, ao utilizar um cupom, a taxa é reduzida para 4,99%.",
+    "convertibilityRates": "As taxas são variáveis para transações envolvendo Pix para LBTC e envio de Bitcoin on-chain.",
+    "convertibilityRatesTile": "Taxas de Convertibilidade",
+    "reflectionTitle": "Reflexão: Bitcoin como Ferramenta Libertária",
+    "reflection1": "Se o Bitcoin é realmente uma ferramenta libertária, por que os governos ainda permitem que os indivíduos comprem BTC legalmente?",
+    "reflection2": "A resposta está na forma como as compras convencionais de Bitcoin funcionam: para adquirir BTC por meio de exchanges tradicionais, você precisa fornecer todos os seus dados pessoais, o famoso KYC (Know Your Customer). Assim, o governo tem acesso a todas as informações sobre a sua transação, incluindo onde seu Bitcoin está e quem o possui.",
+    "reflection3": "Embora você pague uma pequena taxa por transação, o verdadeiro custo vem no momento do saque. Além da taxa fixa de saque, suas transações ficam expostas ao controle governamental. E o preço dessa exposição pode ser alto: impostos de até 27,5% podem ser aplicados, dependendo da sua localização e das regulamentações vigentes.",
+    "reflection4": "A 'conveniência' das exchanges convencionais pode sair muito mais cara do que você imagina. E, além disso, ao entregar seus dados pessoais, você nunca sabe como eles poderão ser usados ou manipulados no futuro.",
+    "privacyTitle": "Privacidade e Anonimato",
+    "privacy1": "É simples: ao escolher o johngalt, você garante a sua privacidade e anonimato.",
+    "privacy2": "Aqui, você pode começar a negociar a partir de 200 BRL usando as redes Liquid, ochain Lightning."
+  },
+  "termsOfUse": {
+    "title": "Termos de Uso",
+    "platformTitle": "Sobre a plataforma",
+    "platformDescription": "O johngalt é uma plataforma P2P (peer-to-peer) que oferece um ambiente seguro para a negociação de Bitcoin (BTC). Diferente das exchanges tradicionais, johngalt não possui transações instantâneas. O modelo P2P garante que você negocie diretamente com outros usuários, seja como fornecedor de liquidez ou criador de ordens, sempre com a segurança de que as transações serão realizadas de maneira eficiente e confiável.\n\nTodos os provedores de liquidez no johngalt fazem um depósito em BTC, que fica retido até a conclusão da transação, garantindo que ambas as partes cumpram com o acordado.",
+    "transactionsTitle": "Como as transações funcionam",
+    "transactionsSteps": [
+      "Escolha o valor desejado, selecione a rede e informe o endereço da sua carteira.",
+      "Forneça um número de telefone para envio do comprovante de pagamento.",
+      "Lembre-se de aceitar os Termos de Uso e as Taxas aplicáveis para continuar."
+    ],
+    "transactionLimitsTitle": "Limites de transação",
+    "transactionLimitsDescription": "O valor mínimo para a primeira compra é de R$ 500. O valor máximo diário permitido para transações é de R$ 5.000. Para valores acima deste limite, entre em contato com o suporte para obter mais informações e aprovação.",
+    "transactionDurationTitle": "Duração da transação",
+    "transactionDurationDescription": "O tempo de processamento de uma transação pode variar entre 30 minutos a 24 horas, dependendo de diversos fatores, como processamento bancário, envio de comprovantes e congestionamento das redes. Caso o mercado sofra flutuações durante a negociação, atrasos adicionais podem ocorrer.",
+    "kycPoliciesTitle": "Políticas de KYC e responsabilidade",
+    "kycPoliciesDescription": "No johngalt, não exigimos KYC (Know Your Customer) para realizar transações, pois acreditamos na privacidade e na liberdade de nossos usuários. A responsabilidade pela verificação de identidade recai sobre os bancos que permitem o uso de contas bancárias.\n\nNosso papel é garantir que as transações ocorram de forma eficiente e segura, funcionando como um marketplace para a troca de valores entre os usuários.",
+    "globalReachTitle": "Alcance global e métodos de pagamento",
+    "globalReachDescription1": "A operação é realizada globalmente, oferecendo diversas opções de pagamento.",
+    "globalReachDescription2": "Os fornecedores operam de forma independente, sem vínculos específicos com bancos ou entidades reguladoras.",
+    "globalReachDescription3": "O uso da plataforma implica automaticamente a aceitação total dos Termos de Uso.",
+    "disputesTitle": "Disputas e resoluções",
+    "disputesStep1": "Abra uma solicitação no suporte ou entre em contato via WhatsApp.",
+    "disputesStep2": "Sanções financeiras serão aplicadas em casos de desonestidade.",
+    "disputesStep3": "Disputas infundadas estarão sujeitas a sanções de 10% do valor do pedido.",
+    "disputesStep4": "O tempo normal de resolução pode variar de 7 a 30 dias, podendo se estender dependendo do tempo de análise dos bancos.",
+    "conductTitle": "Conduta e compromisso",
+    "conductDescription1": "Nosso compromisso é manter um ambiente seguro e respeitoso, alinhado com os princípios libertários do Bitcoin.",
+    "conductPenalty1": "10%: Difamação sem tentativa prévia de resolução.",
+    "conductPenalty2": "20%: Difamação durante a análise de uma arbitragem.",
+    "conductPenalty3": "100%: Tentativas de fraude ou negociações com fundos ilícitos.",
+    "conductPenalty4": "125%: Má-fé por parte do fornecedor ou não envio de fundos à contraparte após o recebimento.",
+    "conductDescription2": "Usuários com comportamento inadequado serão expulsos permanentemente.",
+    "footer": "Obrigado por escolher nossa plataforma. Nosso compromisso é com sua liberdade e privacidade."
+  },
+  "support": {
+    "sendMessage": "Envie uma mensagem",
+    "firstName": "Nome",
+    "lastName": "Sobrenome",
+    "email": "E-mail",
+    "message": "Mensagem",
+    "send": "Enviar",
+    "successMessage": "Mensagem enviada com sucesso!",
+    "errorMessage": "Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente."
+  },
+  "buycheckout": {
+    "coldWalletError": "O endereço da carteira não pode estar vazio.",
+    "invalidColdWalletErrorLiquid": "Endereço da carteira Liquid inválido.",
+    "invalidColdWalletErrorOnchain": "Endereço da carteira Onchain inválido.",
+    "invalidColdWalletErrorLightning": "Endereço da carteira Lightning inválido.",
+    "transactionNumberError": "O número de telefone é obrigatório.",
+    "invalidTransactionNumberError": "Insira um número de telefone válido (9 a 15 dígitos).",
+    "termsAndFeesAlert": "Você precisa aceitar as taxas, termos de uso e a confirmação dos dados enviados",
+    "networkSelectionAlert": "Você precisa selecionar uma rede de Bitcoin antes de prosseguir.",
+    "paymentError": "Erro ao processar o pagamento.",
+    "invalidColdWalletErrorPolygon": "Endereço de carteira inválido para a rede Polygon.",
+    "invalidColdWalletErrorTron": "Endereço de carteira inválido para a rede Tron.",
+    "invalidNetworkForUSDT": "Para USDT, selecione apenas Liquid, Polygon ou Tron.",
+    "pixKeyCopied": "Chave PIX copiada para a área de transferência!",
+    "makePayment": "Confirmar pagamento",
+    "paymentNotConfirmed": "Pagamento ainda não confirmado. Tente novamente.",
+    "couponInactive": "O cupom não está ativo.",
+    "couponExpired": "O cupom expirou.",
+    "couponUsageLimitReached": "O cupom atingiu o limite de uso.",
+    "couponValid": "O cupom é válido!",
+    "couponCheckError": "Cupom inválido. Entre em contato.",
+    "value": "Valor",
+    "valueCrypto": "Valor Convertido",
+    "selectNetwork": "Selecione a Rede",
+    "selectPaymentMethod": "Selecione o Método de Pagamento",
+    "bitcoinWallet": "Carteira",
+    "contactNumber": "Número de contato",
+    "couponPlaceholder": "Insira o cupom",
+    "apply": "Aplicar",
+    "acceptFees": "Aceito as taxas",
+    "acceptTerms": "Aceito os termos e condições",
+    "confirmDate": "Confirmo que os dados enviados estão corretos",
+    "getPixKey": "Finalizar Pagamento",
+    "missingFields": "Os dados inseridos estão incompletos ou inválidos. Corrija antes de prosseguir.",
+    "applyCouponFirst": "aplique o cupom antes de continuar",
+    "attention": "Atenção:",
+    "instruction": "Para concluir sua transação, clique no botão abaixo após realizar o pagamento.",
+    "timeRemaining": "Tempo restante",
+    "minutes": "minutos",
+    "verifying": "Verificando...",
+    "scanQRCode": "Escaneie o QR Code",
+    "qrCode100kAlt": "QR Code para R$ 100.000",
+    "bitcoinPurchaseWarning": "Atenção: Você está comprando",
+    "alfredLogoAlt": "Logo John Galt",
+    "copyPixKey": "Copiar chave PIX",
+    "paymentMethod": {
+      "PIX": "PIX",
+      "WISE": "Wise",
+      "TICKET": "Boleto Bancário",
+      "SWIFT": "Swift",
+      "PAYPAL": "PayPal",
+      "BANK_TRANSFER": "Transferência Bancária",
+      "TED": "TED",
+      "CASH": "Depósito em Espécie"
+    },
+    "paymentLevelRestriction": {
+      "ted": "TED disponível apenas para nível Prata (2) ou superior",
+      "cash": "Depósito em espécie disponível apenas para nível Ouro (3) ou superior",
+      "general": "Este método de pagamento não está disponível para seu nível atual"
+    },
+    "contactTooltip": {
+      "message": "Por segurança, é necessário realizar o login com seu usuário e senha para que você possa acessar a plataforma em qualquer dispositivo e liberar futuras compras, e valores maiores.",
+      "alternative": "Se não quiser informar seu número real, pode inserir um fictício, como 1111111111."
+    },
+    "loginTooltip": {
+      "message": "Por segurança, é necessário realizar o login com seu usuário e senha para que você possa acessar a plataforma em qualquer dispositivo e liberar futuras compras, e valores maiores.",
+      "alternative": "Suas credenciais serão usadas apenas para autenticação."
+    },
+    "usernamePlaceholder": "Usuário",
+    "passwordPlaceholder": "Senha"
+  },
+  "confirm_infos": {
+    "title": "Confirmar Informações",
+    "description": "Por favor, revise as informações da transação antes de confirmar.",
+    "amount_section": {
+      "title": "Valor",
+      "brl_label": "BRL",
+      "crypto_label": "Em Cripto:"
+    },
+    "user_data_section": {
+      "title": "Meus Dados",
+      "wallet": "Carteira",
+      "contact_number": "Número de Contato",
+      "coupon": "Cupom",
+      "coupon_none": "Nenhum",
+      "network": "Rede",
+      "payment_method": "Método de Pagamento"
+    },
+    "fees_section": {
+      "title": "Taxas",
+      "conversion_fee": "Taxa de Conversão",
+      "conversion_fee_value": "(2.5%)",
+      "onchain_fee": "Taxa da Rede Onchain",
+      "onchain_fee_variable": "(variável)",
+      "john_galt_fee": "Taxa John Galt",
+      "total_fees": "Total de Taxas"
+    },
+    "final_summary": {
+      "title": "Resumo Final",
+      "expected_amount": "Valor Esperado (BRL)",
+      "expected_amount_crypto": "Valor Esperado (Cripto)"
+    },
+    "buttons": {
+      "cancel": "Cancelar",
+      "confirm": "Confirmar"
+    }
+  },
+  "guide": {
+    "imageStep": "Olá, eu sou o John Galt! Seja bem-vindo! Sou um robô que facilita para você transações de Bitcoin sem KYC, de forma simples e segura.",
+    "brlStep": "Digite o valor em BRL que você deseja converter para Bitcoin.",
+    "proceedButtonStep": "Após preencher o valor, clique no botão 'Prosseguir' para continuar com a compra."
+  },
+  "userLevels": {
+    "title": "Seu Nível",
+    "madeira": {
+      "name": "Madeira",
+      "description": "Limite Inicial: Até 2 transações de até R$500 cada no mesmo dia.",
+      "validation": "Após essas duas transações, é necessário aguardar 24 horas para análise."
+    },
+    "bronze": {
+      "name": "Bronze",
+      "description": "Limite de até R$5.000 por dia",
+      "requirements": "Passa pela validação inicial de 24 horas após as 2 primeiras transações."
+    },
+    "prata": {
+      "name": "Prata",
+      "description": "Limite de até R$10.000 por dia",
+      "requirements": "Ter realizado 3 compras."
+    },
+    "ouro": {
+      "name": "Ouro",
+      "description": "Limite de até R$35.000 por dia",
+      "requirements": "Ter realizado 4 compras e movimentado R$50.000 no total."
+    },
+    "diamante": {
+      "name": "Diamante",
+      "description": "Limite de até R$50.000 por dia",
+      "requirements": "Ter transacionado um total de R$100.000."
+    },
+    "platina": {
+      "name": "Platina",
+      "description": "Limite de até R$150.000 por dia",
+      "requirements": "Ter transacionado um total de R$250.000."
+    },
+    "dailyLimitExceeded": "Limite diário excedido para seu nível atual.",
+    "transactionLimitExceeded": "Limite de transações diárias atingido.",
+    "paymentMethods": {
+      "ted": "TED disponível a partir do nível Prata (2)",
+      "cash": "Depósito em espécie disponível a partir do nível Ouro (3)",
+      "all": "Todos os métodos de pagamento disponíveis a partir do nível Diamante (4)"
+    }
+  }
+}

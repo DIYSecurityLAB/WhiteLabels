@@ -1,3 +1,4 @@
+import { useWhiteLabel } from '@/context/WhiteLabelContext';
 import { useEffect, useState } from 'react';
 import { useAuth } from './useAuth';
 
@@ -12,6 +13,7 @@ export interface UserLevelRestrictions {
 
 export function useUserLevel() {
   const { user } = useAuth();
+  const { getLevelName } = useWhiteLabel();
   const [restrictions, setRestrictions] = useState<UserLevelRestrictions>({
     dailyLimit: 500,
     totalTransactionsLimit: 2,
@@ -21,12 +23,13 @@ export function useUserLevel() {
     canUseAllPaymentMethods: false,
   });
 
-  useEffect(() => {
-    if (!user) return;
+  // Obter apenas o número do nível do usuário
+  const userLevel = user?.level || 0;
 
-    // Define as restrições com base no nível do usuário
-    switch (user.level) {
-      case 0: // Madeira
+  useEffect(() => {
+    // Define as restrições com base no nível do usuário (número)
+    switch (userLevel) {
+      case 0: // Nível 0 (Iniciante na config)
         setRestrictions({
           dailyLimit: 500,
           totalTransactionsLimit: 2,
@@ -36,7 +39,7 @@ export function useUserLevel() {
           canUseAllPaymentMethods: false,
         });
         break;
-      case 1: // Bronze
+      case 1: // Nível 1 (Básico na config)
         setRestrictions({
           dailyLimit: 5000,
           totalTransactionsLimit: 999, // Sem limite prático
@@ -46,7 +49,7 @@ export function useUserLevel() {
           canUseAllPaymentMethods: false,
         });
         break;
-      case 2: // Prata
+      case 2: // Nível 2 (Intermediário na config)
         setRestrictions({
           dailyLimit: 10000,
           totalTransactionsLimit: 999,
@@ -56,7 +59,7 @@ export function useUserLevel() {
           canUseAllPaymentMethods: false,
         });
         break;
-      case 3: // Ouro
+      case 3: // Nível 3 (Avançado na config)
         setRestrictions({
           dailyLimit: 35000,
           totalTransactionsLimit: 999,
@@ -66,7 +69,7 @@ export function useUserLevel() {
           canUseAllPaymentMethods: false,
         });
         break;
-      case 4: // Diamante
+      case 4: // Nível 4 (Expert na config)
         setRestrictions({
           dailyLimit: 50000,
           totalTransactionsLimit: 999,
@@ -76,7 +79,7 @@ export function useUserLevel() {
           canUseAllPaymentMethods: true,
         });
         break;
-      case 5: // Platina
+      case 5: // Nível 5 (Master na config)
         setRestrictions({
           dailyLimit: 150000,
           totalTransactionsLimit: 999,
@@ -87,7 +90,7 @@ export function useUserLevel() {
         });
         break;
       default:
-        // Padrão para níveis desconhecidos (mesmo que Madeira)
+        // Padrão para níveis desconhecidos (mesmo que nível 0)
         setRestrictions({
           dailyLimit: 500,
           totalTransactionsLimit: 2,
@@ -97,7 +100,7 @@ export function useUserLevel() {
           canUseAllPaymentMethods: false,
         });
     }
-  }, [user]);
+  }, [userLevel]);
 
   // Função para verificar se um valor está dentro do limite diário
   const isWithinDailyLimit = (amount: number): boolean => {
@@ -143,8 +146,8 @@ export function useUserLevel() {
     if (!user) return null;
 
     return {
-      level: user.level,
-      levelName: user.levelName,
+      level: userLevel,
+      levelName: getLevelName(userLevel),
       dailyLimit: restrictions.dailyLimit,
       formattedDailyLimit: new Intl.NumberFormat('pt-BR', {
         style: 'currency',
@@ -155,8 +158,8 @@ export function useUserLevel() {
   };
 
   return {
-    userLevel: user?.level || 0,
-    userLevelName: user?.levelName || 'Madeira',
+    userLevel,
+    userLevelName: getLevelName(userLevel),
     restrictions,
     isWithinDailyLimit,
     canUseTed,

@@ -1,3 +1,4 @@
+import { useWhiteLabel } from '@/context/WhiteLabelContext';
 import { Background } from '@/view/components/BackgroundAnimatedProduct';
 import { motion } from 'framer-motion';
 import { CSSProperties, useEffect, useState } from 'react';
@@ -5,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 import { FaWhatsapp } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import logoSucces from '../../assets/Check_Tela_Alfred.png';
-import JohnGaltLogo from '../../assets/logo/Logo.png';
 import TalkBallon from '../../assets/talk.png';
 import { ROUTES } from '../../routes/Routes';
 import { useCurrentLang } from '../../utils/useCurrentLang';
@@ -15,6 +15,7 @@ export function PaymentAlfredSuccess() {
   const { currentLang } = useCurrentLang();
   const navigate = useNavigate();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const { config } = useWhiteLabel();
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -93,12 +94,13 @@ export function PaymentAlfredSuccess() {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen flex flex-col justify-center items-center px-6 text-center relative text-white"
+      className="min-h-screen flex flex-col justify-center items-center px-6 text-center relative"
+      style={{ color: config.colors.text }}
     >
       <Background />
       <motion.img
-        src={JohnGaltLogo}
-        alt="John Galt Logo"
+        src={config.logo.main}
+        alt={`${config.name} Logo`}
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.3, duration: 0.5 }}
@@ -134,7 +136,8 @@ export function PaymentAlfredSuccess() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.5 }}
-        className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg mb-4"
+        className="text-3xl md:text-5xl font-bold drop-shadow-lg mb-4"
+        style={{ color: config.colors.text }}
       >
         {t('paymentSuccess.title')}
       </motion.h1>
@@ -143,7 +146,8 @@ export function PaymentAlfredSuccess() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7, duration: 0.5 }}
-        className="text-lg md:text-xl mb-8 max-w-xl text-gray-100"
+        className="text-lg md:text-xl mb-8 max-w-xl"
+        style={{ color: `${config.colors.text}cc` }}
       >
         {t('paymentSuccess.description')}{' '}
         <strong>{t('paymentSuccess.transactionTime')}</strong>
@@ -157,18 +161,28 @@ export function PaymentAlfredSuccess() {
       >
         <button
           onClick={() => handleOnLink(ROUTES.buyBitcoin.call(currentLang))}
-          className="w-[200px] h-[50px] bg-[#ff007a] border-[3px] border-white rounded-[40px] "
+          className="w-[200px] h-[50px] rounded-[40px] border-[3px]"
+          style={{
+            backgroundColor: config.colors.primary,
+            color: config.colors.text,
+            borderColor: config.colors.text,
+          }}
         >
           {t('paymentSuccess.redirectButton')}
         </button>
         <button
           onClick={() =>
             window.open(
-              'https://api.whatsapp.com/send?phone=+5511919050416&text=Meu%20pagamento%20no%20John%20Galt%20foi%20conclu%C3%ADdo%20e%20tenho%20algumas%20d%C3%BAvidas.%20Poderia%20me%20ajudar%3F',
+              `https://api.whatsapp.com/send?phone=${config.supportWhatsapp.replace(/\+/, '')}&text=Meu%20pagamento%20no%20${encodeURIComponent(config.name)}%20foi%20conclu%C3%ADdo%20e%20tenho%20algumas%20d%C3%BAvidas.%20Poderia%20me%20ajudar%3F`,
               '_blank',
             )
           }
-          className="bg-black w-[200px] h-[50px] text-[#00FC00] border-[3px] border-[#00FC00] rounded-[40px] flex items-center justify-center gap-2"
+          className="w-[200px] h-[50px] rounded-[40px] flex items-center justify-center gap-2 border-[3px]"
+          style={{
+            backgroundColor: config.colors.background,
+            color: '#00FC00',
+            borderColor: '#00FC00',
+          }}
         >
           {t('paymentSuccess.whatsapp')} <FaWhatsapp />
         </button>

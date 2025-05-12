@@ -1,3 +1,4 @@
+import { useWhiteLabel } from '@/context/WhiteLabelContext';
 import { PaymentLoader } from '@/view/components/PaymentLoader';
 import { UserLevelBadge } from '@/view/components/UserLevelBadge';
 import classNames from 'classnames';
@@ -16,7 +17,6 @@ import { FaPix } from 'react-icons/fa6';
 import { toast } from 'react-toastify';
 import BankTransf from '../../../assets/bankIcon.png';
 import BoletoIcon from '../../../assets/BoletoIcon.png';
-import JohnGaltWhiteLogo from '../../../assets/logo/Logo_type.svg';
 import PayPalIcon from '../../../assets/paypalIcon.png';
 import SwiftIcon from '../../../assets/swiftIcon.png';
 import WiseIcon from '../../../assets/wiseIcon.png';
@@ -46,6 +46,7 @@ type PaymentMethodType =
 import { isVipUser } from '@/config/vipUsers';
 
 export default function DataForm() {
+  const { config, getLogoByTheme } = useWhiteLabel();
   const {
     network,
     coldWallet,
@@ -192,7 +193,7 @@ export default function DataForm() {
     }
 
     if (fiatType.toUpperCase() !== 'BRL') {
-      const whatsappNumber = '5511911872097';
+      const whatsappNumber = config.supportWhatsapp.replace(/\+/, '');
       const message = `Olá! Estou Querendo comprar ${cryptoType.toUpperCase()} com ${fiatType} .
 Valor: ${fiatAmount} (${fiatType})
 Crypto (${cryptoType.toUpperCase()}): ${cryptoAmount}
@@ -207,15 +208,15 @@ Cupom: ${cupom || 'Nenhum'}`;
 
     if (paymentMethod === 'PIX') {
       if (numericFiat > 5000) {
-        let taxaJohnGalt = '';
+        let taxaPlataforma = '';
         if (numericFiat >= 6000) {
-          taxaJohnGalt = cupom.trim() !== '' ? '4.99' : '6';
+          taxaPlataforma = cupom.trim() !== '' ? '4.99' : '6';
         } else {
-          taxaJohnGalt = alfredFeePercentage.toString();
+          taxaPlataforma = alfredFeePercentage.toString();
         }
 
         const message = `
-    Estou comprando mais de 5 mil reais no John Galt e preciso do formulário de Validação para Transações Anônimas.
+    Estou comprando mais de 5 mil reais no ${config.name} e preciso do formulário de Validação para Transações Anônimas.
 
     - Valor: ${fiatAmount} (${fiatType})
     - Valor Crypto: ${cryptoAmount} ${cryptoType.toUpperCase()}
@@ -224,9 +225,9 @@ Cupom: ${cupom || 'Nenhum'}`;
     - Método de pagamento: ${paymentMethodLabels[paymentMethod]}
     - Usuário: ${username}
     - Cupom: ${cupom || 'Nenhum'}
-    - Taxa John Galt (%): ${taxaJohnGalt}
+    - Taxa ${config.name} (%): ${taxaPlataforma}
         `;
-        const whatsappURL = `https://wa.me/5511911872097?text=${encodeURIComponent(message)}`;
+        const whatsappURL = `https://wa.me/${config.supportWhatsapp.replace(/\+/, '')}?text=${encodeURIComponent(message)}`;
         window.open(whatsappURL, '_blank');
         return;
       }
@@ -318,8 +319,8 @@ Cupom: ${cupom || 'Nenhum'}`;
 
       <main className="flex flex-col justify-center items-center pt-12 sm:pt-24 px-4 sm:px-6">
         <img
-          src={JohnGaltWhiteLogo}
-          alt="John Galt Logo"
+          src={getLogoByTheme('default', 'type')}
+          alt={`${config.name} Logo`}
           className="w-64 sm:w-96"
         />
 
@@ -636,7 +637,8 @@ Cupom: ${cupom || 'Nenhum'}`;
                   />
                   <button
                     onClick={handleApplyCoupon}
-                    className="ml-4 px-6 py-3 bg-[#ff007a] text-white rounded-3xl font-bold"
+                    className="ml-4 px-6 py-3 text-white rounded-3xl font-bold"
+                    style={{ backgroundColor: config.colors.primary }}
                   >
                     {t('buycheckout.apply')}
                   </button>
@@ -653,7 +655,7 @@ Cupom: ${cupom || 'Nenhum'}`;
                           className="sr-only"
                         />
                         <div
-                          className={`w-10 h-5 ${acceptFees ? 'bg-[#ff007a]' : 'bg-gray-600'} rounded-full shadow-inner transition-colors duration-300`}
+                          className={`w-10 h-5 ${acceptFees ? 'bg-[var(--color-primary)]' : 'bg-gray-600'} rounded-full shadow-inner transition-colors duration-300`}
                         ></div>
                         <div
                           className={`absolute w-4 h-4 bg-white rounded-full shadow top-0.5 left-0.5 transition-transform transform ${acceptFees ? 'translate-x-5' : ''}`}
@@ -667,10 +669,10 @@ Cupom: ${cupom || 'Nenhum'}`;
                             'noopener,noreferrer',
                           )
                         }
-                        className="ml-3 text-sm sm:text-base cursor-pointer text-white hover:text-[#ff007a] transition-colors flex items-center"
+                        className="ml-3 text-sm sm:text-base cursor-pointer text-white hover:text-[var(--color-primary)] transition-colors flex items-center"
                       >
                         {t('buycheckout.acceptFees')}
-                        <FaExternalLinkAlt className="ml-1 text-[#ff007a] text-xs" />
+                        <FaExternalLinkAlt className="ml-1 text-[var(--color-primary)] text-xs" />
                       </div>
                     </label>
                   </div>
@@ -685,7 +687,7 @@ Cupom: ${cupom || 'Nenhum'}`;
                           className="sr-only"
                         />
                         <div
-                          className={`w-10 h-5 ${acceptTerms ? 'bg-[#ff007a]' : 'bg-gray-600'} rounded-full shadow-inner transition-colors duration-300`}
+                          className={`w-10 h-5 ${acceptTerms ? 'bg-[var(--color-primary)]' : 'bg-gray-600'} rounded-full shadow-inner transition-colors duration-300`}
                         ></div>
                         <div
                           className={`absolute w-4 h-4 bg-white rounded-full shadow top-0.5 left-0.5 transition-transform transform ${acceptTerms ? 'translate-x-5' : ''}`}
@@ -699,10 +701,10 @@ Cupom: ${cupom || 'Nenhum'}`;
                             'noopener,noreferrer',
                           )
                         }
-                        className="ml-3 text-sm sm:text-base cursor-pointer text-white hover:text-[#ff007a] transition-colors flex items-center"
+                        className="ml-3 text-sm sm:text-base cursor-pointer text-white hover:text-[var(--color-primary)] transition-colors flex items-center"
                       >
                         {t('buycheckout.acceptTerms')}
-                        <FaExternalLinkAlt className="ml-1 text-[#ff007a] text-xs" />
+                        <FaExternalLinkAlt className="ml-1 text-[var(--color-primary)] text-xs" />
                       </div>
                     </label>
                   </div>
@@ -714,9 +716,10 @@ Cupom: ${cupom || 'Nenhum'}`;
                     type="button"
                     disabled={!acceptFees || !acceptTerms}
                     className={classNames(
-                      'w-full h-12 sm:h-14 bg-[#ff007a] text-white rounded-3xl font-bold text-sm sm:text-base mb-[10%]',
+                      'w-full h-12 sm:h-14 text-white rounded-3xl font-bold text-sm sm:text-base mb-[10%]',
                       (!acceptFees || !acceptTerms) && 'opacity-50',
                     )}
+                    style={{ backgroundColor: config.colors.primary }}
                   >
                     {t('buycheckout.getPixKey')}
                   </button>

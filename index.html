@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>John Galt | P2P</title>
+    <title>White Label Bitcoin P2P</title>
 
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Jonh Galt" />
+    <meta name="apple-mobile-web-app-title" content="Bitcoin P2P" />
     <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Meta tags específicas -->
@@ -20,8 +20,8 @@
       content="/web-app-manifest-192x192.png"
     />
 
-    <!-- Meta Tags SEO -->
-    <meta name="title" content="John Galt" />
+    <!-- Meta Tags SEO (serão atualizadas dinamicamente pelo WhiteLabelProvider) -->
+    <meta name="title" content="Bitcoin P2P" />
     <meta
       name="description"
       content="Compre Bitcoin de forma privada e segura com transações P2P sem KYC."
@@ -29,47 +29,45 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.johngaltp2p.com/pt" />
-    <meta property="og:title" content="John Galt" />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:title" content="Bitcoin P2P" />
     <meta
       property="og:description"
       content="Compre Bitcoin de forma privada e segura com transações P2P sem KYC."
     />
-    <meta property="og:image" content="/johngalt.jpg" />
+    <meta property="og:image" content="/logo.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://www.johngaltp2p.com/pt" />
-    <meta property="twitter:title" content="John Galt" />
+    <meta property="twitter:url" content="https://example.com" />
+    <meta property="twitter:title" content="Bitcoin P2P" />
     <meta
       property="twitter:description"
       content="Compre Bitcoin de forma privada e segura com transações P2P sem KYC."
     />
-    <meta property="twitter:image" content="/johngalt.jpg" />
+    <meta property="twitter:image" content="/logo.jpg" />
 
     <!-- Meta Keywords -->
     <meta
       name="keywords"
-      content="Bitcoin, Compra P2P, Sem KYC, Privacidade, Transações Seguras, John Galt"
+      content="Bitcoin, Compra P2P, Sem KYC, Privacidade, Transações Seguras"
     />
     <meta name="robots" content="index, follow" />
 
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-P6KWRSKT');
-    </script>
-    <!-- End Google Tag Manager -->
+    <!-- Variáveis CSS temporárias até que o JS carregue -->
+    <style>
+      :root {
+        --color-primary: #ff007a;
+        --color-secondary: #000a13;
+        --color-accent: #f49300;
+        --color-bg: #000000;
+        --color-text: #ffffff;
+        --font-main: 'Lexend';
+        --font-headings: 'Orbitron';
+      }
+    </style>
   </head>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -80,30 +78,7 @@
   />
 
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-P6KWRSKT"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-
-    <script>
-      function updateFavicon() {
-        const favicon = document.getElementById('favicon');
-        favicon.setAttribute('href', '/faviconai.png');
-      }
-
-      updateFavicon();
-
-      window
-        .matchMedia('(prefers-color-scheme: dark)')
-        .addEventListener('change', updateFavicon);
-    </script>
   </body>
 </html>

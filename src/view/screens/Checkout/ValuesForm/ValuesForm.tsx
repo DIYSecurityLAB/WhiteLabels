@@ -1,3 +1,4 @@
+import { useWhiteLabel } from '@/context/WhiteLabelContext';
 import { useEffect, useState } from 'react';
 import { FaQuestionCircle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
@@ -21,6 +22,7 @@ export function ValuesForm({
     useValuesForm();
   const [hasShownToast, setHasShownToast] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
+  const { config } = useWhiteLabel();
 
   // Controle dos valores do formulário
   const fiatAmount = form.watch('fiatAmount');
@@ -96,12 +98,13 @@ export function ValuesForm({
                   ? t('checkout.brl_placeholder')
                   : t('checkout.usd_placeholder')
               }
-              className="border-2 px-16 py-3 rounded-3xl text-base sm:text-lg text-white placeholder-white bg-black text-center w-full"
+              className="border-2 px-16 py-3 rounded-3xl text-base sm:text-lg text-brand-text placeholder-brand-text text-center w-full"
+              style={{ backgroundColor: config.colors.secondary }}
             />
             <button
               type="button"
               onClick={toggleFiatType}
-              className="absolute right-2 top-1/2 -translate-y-1/2 text-white"
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-brand-text"
             >
               <img
                 src={fiatType === 'BRL' ? Brl : Usdt}
@@ -129,9 +132,13 @@ export function ValuesForm({
             <button
               type="button"
               onClick={toggleTransactionType}
-              className={`absolute left-2 top-1/2 -translate-y-1/2 text-white ${
-                transactionType === 'buy' ? 'bg-green-500' : 'bg-red-500'
-              } px-4 py-2 rounded-full text-sm `}
+              className={`absolute left-2 top-1/2 -translate-y-1/2 text-brand-text px-4 py-2 rounded-full text-sm`}
+              style={{
+                backgroundColor:
+                  transactionType === 'buy'
+                    ? config.colors.success
+                    : config.colors.error,
+              }}
             >
               {transactionType === 'buy'
                 ? t('checkout.buy')
@@ -155,12 +162,13 @@ export function ValuesForm({
                     ? t('checkout.depix_placeholder')
                     : t('checkout.usdt_placeholder')
               }
-              className="border-2 px-16 py-3 rounded-3xl text-base sm:text-lg text-white placeholder-white bg-black text-center w-full"
+              className="border-2 px-16 py-3 rounded-3xl text-base sm:text-lg text-brand-text placeholder-brand-text text-center w-full"
+              style={{ backgroundColor: config.colors.secondary }}
             />
             <button
               type="button"
               onClick={toggleCryptoType}
-              className="absolute right-2 top-1/2 -translate-y-1/2 text-white"
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-brand-text"
             >
               <img
                 src={
@@ -192,19 +200,21 @@ export function ValuesForm({
         </div>
       </div>
 
-      {/* Tooltip permanece igual */}
+      {/* Tooltip */}
       <div className="absolute top-[-2rem] left-2">
         <div className="relative">
           <FaQuestionCircle
             id="question-icon"
-            className="text-white cursor-pointer"
+            className="cursor-pointer"
             size={24}
             onClick={toggleTooltip}
+            style={{ color: config.colors.text }}
           />
           {showTooltip && (
             <div
               id="tooltip-container"
-              className="absolute z-20 w-72 p-4 bg-gray-800 text-white text-sm rounded shadow-lg left-full top-full ml-2 mt-2"
+              className="absolute z-20 w-72 p-4 text-brand-text text-sm rounded shadow-lg left-full top-full ml-2 mt-2"
+              style={{ backgroundColor: config.colors.backgroundSecondary }}
             >
               <p>
                 <strong>{t('checkout.tooltip_btc.title')}</strong>
