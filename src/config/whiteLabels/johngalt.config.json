@@ -1,0 +1,98 @@
+{
+  "id": "johngalt",
+  "name": "John Galt",
+  "shortName": "JG",
+  "supportEmail": "support@johngaltp2p.com",
+  "supportWhatsapp": "+557184041107",
+  "salesWhatsapp": "+557184041107",
+  "colors": {
+    "primary": "#ff007a",
+    "secondary": "#000A13",
+    "accent": "#F49300",
+    "background": "#000000",
+    "backgroundSecondary": "#1a1d2b",
+    "text": "#ffffff",
+    "primaryHover": "#c40963",
+    "secondaryHover": "#001a2e",
+    "success": "#28A745",
+    "error": "#DC3545",
+    "warning": "#FFC107"
+  },
+  "socialMedia": {
+    "instagram": "https://www.instagram.com/tarcisiomprado/",
+    "twitter": "https://x.com/tarcisiomprado",
+    "facebook": "",
+    "telegram": "",
+    "linkedin": ""
+  },
+  "fonts": {
+    "main": "Lexend",
+    "headings": "Orbitron"
+  },
+  "logo": {
+    "main": "/src/view/assets/johngalt/logo/logo.png",
+    "mainDark": "/src/view/assets/johngalt/logo/logo_dark.png",
+    "mainLight": "/src/view/assets/johngalt/logo/logo_light.png",
+    "type": "/src/view/assets/johngalt/logo/logo_type.svg",
+    "typeDark": "/src/view/assets/johngalt/logo/logo_type_dark.svg",
+    "typeLight": "/src/view/assets/johngalt/logo/logo_type_light.svg",
+    "alternative": "/src/view/johngalt/assets/logo/logo_alt.png",
+    "icon": "/src/view/assets/johngalt/logo/logo.png",
+    "footer": "/src/view/assets/johngalt/logo/logo_footer.svg",
+    "levelIcon": "/src/view/assets/johngalt/logo/logo.png",
+    "applyLevelIconFilter": true
+  },
+  "background": {
+    "hero": "/johngalt/bg-hero.png",
+    "opacity": 90
+  },
+  "favicon": "/johngalt/favicon-96x96.png",
+  "userLevels": {
+    "level0": "Iniciante",
+    "level1": "Pensador",
+    "level2": "Inventor",
+    "level3": "Revolucionário",
+    "level4": "Atlas",
+    "level5": "Libertador",
+    "colors": {
+      "level0": {
+        "primary": "#7f8c8d",
+        "secondary": "#23272e"
+      },
+      "level1": {
+        "primary": "#2980b9",
+        "secondary": "#23272e"
+      },
+      "level2": {
+        "primary": "#f5c518",
+        "secondary": "#23272e"
+      },
+      "level3": {
+        "primary": "#e74c3c",
+        "secondary": "#23272e"
+      },
+      "level4": {
+        "primary": "#8e44ad",
+        "secondary": "#23272e"
+      },
+      "level5": {
+        "primary": "#1a7f37",
+        "secondary": "#23272e"
+      }
+    },
+    "icons": {
+      "level0": "🧑‍💻",
+      "level1": "💡",
+      "level2": "⚙️",
+      "level3": "🔥",
+      "level4": "🌎",
+      "level5": "🗽"
+    }
+  },
+  "localePrefix": "johngalt",
+  "metaTags": {
+    "title": "John Galt | P2P",
+    "description": "Compre Bitcoin de forma privada e segura com transações P2P sem KYC.",
+    "ogImage": "/johngalt/og-image.jpg"
+  }
+}

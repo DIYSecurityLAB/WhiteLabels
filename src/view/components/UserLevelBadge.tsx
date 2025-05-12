@@ -22,15 +22,26 @@ export function UserLevelBadge({ compact = false }: UserLevelBadgeProps) {
 
   if (!levelInfo) return null;
 
+  // Mapeamento dos níveis para as chaves corretas nos arquivos de tradução
+  const levelKeys = [
+    'madeira',
+    'bronze',
+    'prata',
+    'ouro',
+    'diamante',
+    'platina',
+  ];
+
   // Estrutura para definir os próximos níveis e seus requisitos
   const levelProgression = [0, 1, 2, 3, 4, 5].map((level) => {
-    const levelName = getLevelName(level).toLowerCase();
+    // Usar a chave correta do arquivo de tradução
+    const levelKey = levelKeys[level];
     return {
       level,
       name: getLevelName(level),
-      description: t(`userLevels.${levelName}.description`),
+      description: t(`userLevels.${levelKey}.description`),
       requirements: t(
-        `userLevels.${levelName}.${level === 0 ? 'validation' : 'requirements'}`,
+        `userLevels.${levelKey}.${level === 0 ? 'validation' : 'requirements'}`,
       ),
       icon: config.userLevels.icons[
         `level${level}` as keyof typeof config.userLevels.icons
@@ -192,7 +203,7 @@ export function UserLevelBadge({ compact = false }: UserLevelBadgeProps) {
                         className="font-semibold mb-2"
                         style={{ color: config.colors.text }}
                       >
-                        Seus benefícios:
+                        {t('userLevels.benefits')}:
                       </h4>
                       <ul className="mt-1 space-y-2">
                         <li
@@ -214,7 +225,7 @@ export function UserLevelBadge({ compact = false }: UserLevelBadgeProps) {
                               className="w-1.5 h-1.5 rounded-full"
                               style={{ backgroundColor: config.colors.success }}
                             ></span>
-                            Acesso a TED
+                            {t('userLevels.paymentMethods.ted')}
                           </li>
                         )}
                         {userLevel >= 3 && (
@@ -226,7 +237,7 @@ export function UserLevelBadge({ compact = false }: UserLevelBadgeProps) {
                               className="w-1.5 h-1.5 rounded-full"
                               style={{ backgroundColor: config.colors.success }}
                             ></span>
-                            Acesso a depósito em espécie
+                            {t('userLevels.paymentMethods.cash')}
                           </li>
                         )}
                         {userLevel >= 4 && (
@@ -238,7 +249,7 @@ export function UserLevelBadge({ compact = false }: UserLevelBadgeProps) {
                               className="w-1.5 h-1.5 rounded-full"
                               style={{ backgroundColor: config.colors.success }}
                             ></span>
-                            Acesso a todos os métodos de pagamento
+                            {t('userLevels.paymentMethods.all')}
                           </li>
                         )}
                       </ul>
@@ -256,7 +267,9 @@ export function UserLevelBadge({ compact = false }: UserLevelBadgeProps) {
                           className="font-semibold mb-2 flex items-center justify-between"
                           style={{ color: config.colors.text }}
                         >
-                          <span>Próximo nível: {nextLevel.name}</span>
+                          <span>
+                            {t('userLevels.nextLevel')}: {nextLevel.name}
+                          </span>
                           <span className="text-xl">{nextLevel.icon}</span>
                         </h4>
                         <div className="space-y-2 mt-1">
@@ -268,7 +281,7 @@ export function UserLevelBadge({ compact = false }: UserLevelBadgeProps) {
                               className="font-medium"
                               style={{ color: config.colors.warning }}
                             >
-                              Requisitos:
+                              {t('userLevels.requirementsLabel')}:
                             </span>
                             <span
                               style={{ color: `${config.colors.text}99` }}

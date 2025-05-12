@@ -1,0 +1,98 @@
+{
+  "id": "strategymars",
+  "name": "Strategy Mars",
+  "shortName": "SM",
+  "supportEmail": "support@strategymars.com",
+  "salesWhatsapp": "+5511911872097",
+  "supportWhatsapp": "+5511999999999",
+  "colors": {
+    "primary": "#D84315",
+    "secondary": "#1A1A1A",
+    "accent": "#FF7043",
+    "background": "#0A0A0A",
+    "backgroundSecondary": "#151515",
+    "text": "#F5F5F5",
+    "primaryHover": "#BF360C",
+    "secondaryHover": "#2D2D2D",
+    "success": "#43A047",
+    "error": "#E53935",
+    "warning": "#FFB300"
+  },
+  "socialMedia": {
+    "instagram": "https://www.instagram.com/strategymars/",
+    "twitter": "https://x.com/strategymars",
+    "facebook": "https://facebook.com/strategymars",
+    "telegram": "https://t.me/strategymars",
+    "linkedin": "https://linkedin.com/company/strategymars"
+  },
+  "fonts": {
+    "main": "Lexend Deca",
+    "headings": "Josefin Sans"
+  },
+  "logo": {
+    "main": "/src/view/assets/strategymars/logo/logo.png",
+    "mainDark": "/src/view/assets/strategymars/logo/logo_dark.png",
+    "mainLight": "/src/view/assets/strategymars/logo/logo_light.png",
+    "type": "/src/view/assets/strategymars/logo/logo_type.svg",
+    "typeDark": "/src/view/assets/strategymars/logo/logo_type_dark.svg",
+    "typeLight": "/src/view/assets/strategymars/logo/logo_type_light.svg",
+    "alternative": "/src/view/assets/strategymars/logo/logo_alt.png",
+    "icon": "/src/view/assets/strategymars/logo/logo.png",
+    "footer": "/src/view/assets/strategymars/logo/logo_footer.svg",
+    "levelIcon": "/src/view/assets/strategymars/logo/logo.png",
+    "applyLevelIconFilter": false
+  },
+  "background": {
+    "hero": "/strategymars/bg-hero.jpg",
+    "opacity": 85
+  },
+  "favicon": "/strategymars/favicon-96x96.png",
+  "userLevels": {
+    "level0": "Explorador",
+    "level1": "Pioneiro",
+    "level2": "Colono",
+    "level3": "Comandante",
+    "level4": "Almirante",
+    "level5": "Imperador",
+    "colors": {
+      "level0": {
+        "primary": "#757575",
+        "secondary": "#424242"
+      },
+      "level1": {
+        "primary": "#D84315",
+        "secondary": "#BF360C"
+      },
+      "level2": {
+        "primary": "#90A4AE",
+        "secondary": "#607D8B"
+      },
+      "level3": {
+        "primary": "#FFB300",
+        "secondary": "#FF8F00"
+      },
+      "level4": {
+        "primary": "#5C6BC0",
+        "secondary": "#3949AB"
+      },
+      "level5": {
+        "primary": "#7E57C2",
+        "secondary": "#5E35B1"
+      }
+    },
+    "icons": {
+      "level0": "🚀",
+      "level1": "🔭",
+      "level2": "🛰️",
+      "level3": "🪐",
+      "level4": "✨",
+      "level5": "👑"
+    }
+  },
+  "localePrefix": "strategymars",
+  "metaTags": {
+    "title": "Strategy Mars | Bitcoin P2P",
+    "description": "Compre e venda Bitcoin como um verdadeiro explorador. Transações P2P sem KYC, com privacidade e segurança máximas.",
+    "ogImage": "/strategymars/og-image.jpg"
+  }
+}

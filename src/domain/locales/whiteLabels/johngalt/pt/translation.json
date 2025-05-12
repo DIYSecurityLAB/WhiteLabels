@@ -258,6 +258,9 @@
   },
   "userLevels": {
     "title": "Seu Nível",
+    "nextLevel": "Próximo nível",
+    "requirementsLabel": "Requisitos",
+    "benefits": "Seus benefícios",
     "madeira": {
       "name": "Madeira",
       "description": "Limite Inicial: Até 2 transações de até R$500 cada no mesmo dia.",

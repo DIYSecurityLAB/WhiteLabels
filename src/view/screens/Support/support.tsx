@@ -7,7 +7,13 @@ import classNames from 'classnames';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTelegram,
+  FaWhatsapp,
+} from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { toast } from 'react-toastify';
 
@@ -94,27 +100,9 @@ export function Support() {
               />
 
               <div className="flex flex-col gap-6 w-full max-w-[368px]">
-                <a
-                  href={`https://api.whatsapp.com/send?phone=${config.supportWhatsapp}&text=Ol%C3%A1,%20Tudo%20bem?%0A%0APreciso%20de%20ajuda%20sobre%20os%20produtos...`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-[24px] shadow-sm transition hover:bg-opacity-20"
-                  style={{
-                    borderColor: `${config.colors.text}33`,
-                    borderWidth: '1px',
-                    borderStyle: 'solid',
-                    backgroundColor: 'transparent',
-                    color: config.colors.text,
-                  }}
-                >
-                  <FaWhatsapp size={32} className="text-green-500" />
-                  <span className="font-semibold text-lg">WhatsApp</span>
-                </a>
-
-                {/* Redes sociais dinâmicas baseadas na configuração do white label */}
-                {config.socialMedia.instagram && (
+                {config.supportWhatsapp && (
                   <a
-                    href={config.socialMedia.instagram}
+                    href={`https://api.whatsapp.com/send?phone=${config.supportWhatsapp}&text=Ol%C3%A1,%20Tudo%20bem?%0A%0APreciso%20de%20ajuda%20sobre%20os%20produtos...`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 p-4 rounded-[24px] shadow-sm transition hover:bg-opacity-20"
@@ -126,52 +114,113 @@ export function Support() {
                       color: config.colors.text,
                     }}
                   >
-                    <FaInstagram size={32} className="text-pink-500" />
-                    <span className="font-semibold text-lg">Instagram</span>
+                    <FaWhatsapp size={32} className="text-green-500" />
+                    <span className="font-semibold text-lg">WhatsApp</span>
                   </a>
                 )}
 
-                {config.socialMedia.twitter && (
-                  <a
-                    href={config.socialMedia.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-[24px] shadow-sm transition hover:bg-opacity-20"
-                    style={{
-                      borderColor: `${config.colors.text}33`,
-                      borderWidth: '1px',
-                      borderStyle: 'solid',
-                      backgroundColor: 'transparent',
-                      color: config.colors.text,
-                    }}
-                  >
-                    <FaXTwitter
-                      size={32}
-                      style={{ color: config.colors.text }}
-                    />
-                    <span className="font-semibold text-lg">X</span>
-                  </a>
-                )}
+                {config.socialMedia.instagram &&
+                  config.socialMedia.instagram.trim() !== '' && (
+                    <a
+                      href={config.socialMedia.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 p-4 rounded-[24px] shadow-sm transition hover:bg-opacity-20"
+                      style={{
+                        borderColor: `${config.colors.text}33`,
+                        borderWidth: '1px',
+                        borderStyle: 'solid',
+                        backgroundColor: 'transparent',
+                        color: config.colors.text,
+                      }}
+                    >
+                      <FaInstagram size={32} className="text-pink-500" />
+                      <span className="font-semibold text-lg">Instagram</span>
+                    </a>
+                  )}
 
-                {/* Adicionar outras redes sociais se existirem */}
-                {config.socialMedia.facebook && (
-                  <a
-                    href={config.socialMedia.facebook}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-[24px] shadow-sm transition hover:bg-opacity-20"
-                    style={{
-                      borderColor: `${config.colors.text}33`,
-                      borderWidth: '1px',
-                      borderStyle: 'solid',
-                      backgroundColor: 'transparent',
-                      color: config.colors.text,
-                    }}
-                  >
-                    <FaFacebook size={32} className="text-blue-500" />
-                    <span className="font-semibold text-lg">Facebook</span>
-                  </a>
-                )}
+                {config.socialMedia.twitter &&
+                  config.socialMedia.twitter.trim() !== '' && (
+                    <a
+                      href={config.socialMedia.twitter}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 p-4 rounded-[24px] shadow-sm transition hover:bg-opacity-20"
+                      style={{
+                        borderColor: `${config.colors.text}33`,
+                        borderWidth: '1px',
+                        borderStyle: 'solid',
+                        backgroundColor: 'transparent',
+                        color: config.colors.text,
+                      }}
+                    >
+                      <FaXTwitter
+                        size={32}
+                        style={{ color: config.colors.text }}
+                      />
+                      <span className="font-semibold text-lg">X</span>
+                    </a>
+                  )}
+
+                {config.socialMedia.facebook &&
+                  config.socialMedia.facebook.trim() !== '' && (
+                    <a
+                      href={config.socialMedia.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 p-4 rounded-[24px] shadow-sm transition hover:bg-opacity-20"
+                      style={{
+                        borderColor: `${config.colors.text}33`,
+                        borderWidth: '1px',
+                        borderStyle: 'solid',
+                        backgroundColor: 'transparent',
+                        color: config.colors.text,
+                      }}
+                    >
+                      <FaFacebook size={32} className="text-blue-500" />
+                      <span className="font-semibold text-lg">Facebook</span>
+                    </a>
+                  )}
+
+                {config.socialMedia.telegram &&
+                  config.socialMedia.telegram.trim() !== '' && (
+                    <a
+                      href={config.socialMedia.telegram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 p-4 rounded-[24px] shadow-sm transition hover:bg-opacity-20"
+                      style={{
+                        borderColor: `${config.colors.text}33`,
+                        borderWidth: '1px',
+                        borderStyle: 'solid',
+                        backgroundColor: 'transparent',
+                        color: config.colors.text,
+                      }}
+                    >
+                      <FaTelegram size={32} className="text-blue-400" />
+                      <span className="font-semibold text-lg">Telegram</span>
+                    </a>
+                  )}
+
+                {config.socialMedia.linkedin &&
+                  config.socialMedia.linkedin.trim() !== '' && (
+                    <a
+                      href={config.socialMedia.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 p-4 rounded-[24px] shadow-sm transition hover:bg-opacity-20"
+                      style={{
+                        borderColor: `${config.colors.text}33`,
+                        borderWidth: '1px',
+                        borderStyle: 'solid',
+                        backgroundColor: 'transparent',
+                        color: config.colors.text,
+                      }}
+                    >
+                      <FaLinkedin size={32} className="text-blue-600" />
+                      <span className="font-semibold text-lg">LinkedIn</span>
+                    </a>
+                  )}
               </div>
             </aside>
 

@@ -241,5 +241,48 @@
     "imageStep": "Hello, I’m John Galt! Welcome! I’m a robot that helps you with Bitcoin transactions without KYC, in a simple and secure way.",
     "brlStep": "Enter the amount in BRL that you wish to convert to Bitcoin.",
     "proceedButtonStep": "After entering the amount, click the 'Proceed' button to continue with the purchase."
+  },
+  "userLevels": {
+    "title": "Your Level",
+    "nextLevel": "Next level",
+    "requirementsLabel": "Requirements",
+    "benefits": "Your benefits",
+    "madeira": {
+      "name": "Wood",
+      "description": "Initial Limit: Up to 2 transactions of up to $500 each on the same day.",
+      "validation": "After these two transactions, it is necessary to wait 24 hours for analysis."
+    },
+    "bronze": {
+      "name": "Bronze",
+      "description": "Limit of up to $5,000 per day",
+      "requirements": "Goes through initial validation 24 hours after the first 2 transactions."
+    },
+    "prata": {
+      "name": "Silver",
+      "description": "Limit of up to $10,000 per day",
+      "requirements": "Having made 3 purchases."
+    },
+    "ouro": {
+      "name": "Gold",
+      "description": "Limit of up to $35,000 per day",
+      "requirements": "Having made 4 purchases and moved a total of $50,000."
+    },
+    "diamante": {
+      "name": "Diamond",
+      "description": "Limit of up to $50,000 per day",
+      "requirements": "Having transacted a total of $100,000."
+    },
+    "platina": {
+      "name": "Platinum",
+      "description": "Limit of up to $150,000 per day",
+      "requirements": "Having transacted a total of $250,000."
+    },
+    "dailyLimitExceeded": "Daily limit exceeded for your current level.",
+    "transactionLimitExceeded": "Daily transaction limit reached.",
+    "paymentMethods": {
+      "ted": "TED available from Silver level (2)",
+      "cash": "Cash deposit available from Gold level (3)",
+      "all": "All payment methods available from Diamond level (4)"
+    }
   }
 }

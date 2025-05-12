@@ -1,0 +1,98 @@
+{
+  "id": "alfred",
+  "name": "Alfred P2P",
+  "shortName": "AP",
+  "supportEmail": "support@alfredp2p.com",
+  "salesWhatsapp": "+5511911872097",
+  "supportWhatsapp": "+5511911872097",
+  "colors": {
+    "primary": "#F49300",
+    "secondary": "#000E16",
+    "accent": "#0071BC",
+    "background": "#000000",
+    "backgroundSecondary": "#0d131f",
+    "text": "#ffffff",
+    "primaryHover": "#d47e00",
+    "secondaryHover": "#001a29",
+    "success": "#28A745",
+    "error": "#DC3545",
+    "warning": "#FFC107"
+  },
+  "socialMedia": {
+    "instagram": "https://www.instagram.com/alfredp2p/",
+    "twitter": "https://x.com/alfredp2p",
+    "facebook": "https://facebook.com/alfredp2p",
+    "telegram": "https://t.me/alfredp2p",
+    "linkedin": "https://linkedin.com/company/alfredp2p"
+  },
+  "fonts": {
+    "main": "Poppins",
+    "headings": "Jersey 10"
+  },
+  "logo": {
+    "main": "/src/view/assets/alfred/logo/logo.png",
+    "mainDark": "/src/view/assets/alfred/logo/logo_dark.png",
+    "mainLight": "/src/view/assets/alfred/logo/logo_light.png",
+    "type": "/src/view/assets/alfred/logo/logo_type.svg",
+    "typeDark": "/src/view/assets/alfred/logo/logo_type_dark.svg",
+    "typeLight": "/src/view/assets/alfred/logo/logo_type_light.svg",
+    "alternative": "/src/view/assets/alfred/logo/logo_alt.png",
+    "icon": "/src/view/assets/alfred/logo/logo.png",
+    "footer": "/src/view/assets/alfred/logo/logo_footer.svg",
+    "levelIcon": "/src/view/assets/alfred/logo/level_icon.png",
+    "applyLevelIconFilter": true
+  },
+  "background": {
+    "hero": "/alfred/bg-hero.png",
+    "opacity": 90
+  },
+  "favicon": "/alfred/favicon-96x96.png",
+  "userLevels": {
+    "level0": "Iniciante",
+    "level1": "Básico",
+    "level2": "Intermediário",
+    "level3": "Avançado",
+    "level4": "Expert",
+    "level5": "Master",
+    "colors": {
+      "level0": {
+        "primary": "#9CA3AF",
+        "secondary": "#4B5563"
+      },
+      "level1": {
+        "primary": "#F97316",
+        "secondary": "#EA580C"
+      },
+      "level2": {
+        "primary": "#0EA5E9",
+        "secondary": "#0284C7"
+      },
+      "level3": {
+        "primary": "#22C55E",
+        "secondary": "#16A34A"
+      },
+      "level4": {
+        "primary": "#8B5CF6",
+        "secondary": "#7C3AED"
+      },
+      "level5": {
+        "primary": "#EC4899",
+        "secondary": "#DB2777"
+      }
+    },
+    "icons": {
+      "level0": "🌱",
+      "level1": "🌿",
+      "level2": "🌴",
+      "level3": "🚀",
+      "level4": "⭐",
+      "level5": "🔮"
+    }
+  },
+  "localePrefix": "alfred",
+  "metaTags": {
+    "title": "Alfred P2P | Bitcoin P2P",
+    "description": "Compre e venda Bitcoin de forma privada e segura. Transações P2P sem KYC.",
+    "ogImage": "/alfred/og-image.jpg"
+  }
+}

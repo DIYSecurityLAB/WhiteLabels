@@ -4,6 +4,7 @@ import {
   isPaymentMethodInMaintenance,
 } from '@/config/paymentMaintenance';
 import { generateVipPixCode, isVipUser } from '@/config/vipUsers';
+import { useWhiteLabel } from '@/context/WhiteLabelContext';
 import { useAuth } from '@/view/hooks/useAuth';
 import { useUserLevel } from '@/view/hooks/useUserLevel';
 import axios from 'axios';
@@ -56,6 +57,7 @@ export function useDataForm() {
   const [acceptTerms, setAcceptTerms] = useState(false);
   const [alfredFeePercentage, setAlfredFeePercentage] = useState(5);
   const [isVipTransaction, setIsVipTransaction] = useState(false); // Novo estado para controlar transações VIP
+  const { config } = useWhiteLabel();
 
   // Obtenção de dados de autenticação
   const { user, login, register, refreshAccessToken } = useAuth();
@@ -501,7 +503,7 @@ Cupom: ${cupom}`;
 
       // Se for PIX_MAINTENANCE ou qualquer outro método, redirecionamos para WhatsApp
       setIsLoading(false);
-      const whatsappNumber = '5511911872097';
+      const whatsappNumber = config.salesWhatsapp;
       let message = '';
 
       // Configurar a mensagem específica para cada método
@@ -551,7 +553,7 @@ Cupom: ${cupom}`;
         axios.isAxiosError(error) &&
         error.response?.data?.code === 'BLOCKED'
       ) {
-        const whatsappNumber = '5511911872097';
+        const whatsappNumber = config.salesWhatsapp;
         const message = `Olá, estou recebendo o erro 171. Como posso resolver isso?`;
         toast.error('Erro 171. Entre em contato pelo WhatsApp.');
         setIsLoading(false);

@@ -24,7 +24,7 @@ export default function Checkout() {
       const message = `Olá! Estou interessado em realizar uma venda de ${checkoutData.cryptoType}.
 Valor em ${checkoutData.fiatType}: ${checkoutData.fiatAmount}
 Quantidade de ${checkoutData.cryptoType}: ${checkoutData.cryptoAmount}`;
-      const whatsappNumber = config.supportWhatsapp.replace(/\+/, '');
+      const whatsappNumber = config.salesWhatsapp.replace(/\+/, '');
       const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
       window.open(whatsappLink, '_blank');
     } else {

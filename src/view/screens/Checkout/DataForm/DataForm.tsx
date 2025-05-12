@@ -193,7 +193,7 @@ export default function DataForm() {
     }
 
     if (fiatType.toUpperCase() !== 'BRL') {
-      const whatsappNumber = config.supportWhatsapp.replace(/\+/, '');
+      const whatsappNumber = config.salesWhatsapp.replace(/\+/, '');
       const message = `Olá! Estou Querendo comprar ${cryptoType.toUpperCase()} com ${fiatType} .
 Valor: ${fiatAmount} (${fiatType})
 Crypto (${cryptoType.toUpperCase()}): ${cryptoAmount}
@@ -227,7 +227,7 @@ Cupom: ${cupom || 'Nenhum'}`;
     - Cupom: ${cupom || 'Nenhum'}
     - Taxa ${config.name} (%): ${taxaPlataforma}
         `;
-        const whatsappURL = `https://wa.me/${config.supportWhatsapp.replace(/\+/, '')}?text=${encodeURIComponent(message)}`;
+        const whatsappURL = `https://wa.me/${config.salesWhatsapp.replace(/\+/, '')}?text=${encodeURIComponent(message)}`;
         window.open(whatsappURL, '_blank');
         return;
       }
