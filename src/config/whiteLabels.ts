@@ -333,7 +333,7 @@ export const domainConfigs: Record<string, WhiteLabelConfig> = {
   'strategymars.com': strategyMarsConfig,
 
   // Para ambiente de desenvolvimento local (localhost), usa o padrão
-  localhost: alfredConfig,
+  localhost: johnGaltConfig,
   '127.0.0.1': johnGaltConfig,
 };
 
