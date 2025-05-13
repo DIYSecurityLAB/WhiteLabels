@@ -76,20 +76,23 @@ export function useConfirmInfos(
       ? fiatAmountNum
       : fiatAmountNum * (usdToBrl || 0);
 
-  // Lógica atualizada de definição da taxa (alfredFeeRate):
-  // - Para valores até 6000 BRL:
-  //   - Sem cupom: 4.99% (0.0499)
-  //   - Com cupom: Taxa do influencer (alfredFeePercentage/100)
-  // - Para valores acima de 6000 BRL:
-  //   - Sem cupom: 5.99% (0.0599)
-  //   - Com cupom: 4.99% (0.0499)
-  let alfredFeeRate: number;
-
-  if (amountBRL < 6000) {
-    alfredFeeRate =
-      cupom && cupom.trim() !== '' ? localAlfredFeePercentage / 100 : 0.0499;
+  // NOVA LÓGICA DE TAXAS FIXAS E CUPOM
+  // - < 1000: 10%
+  // - 1000 <= x < 6000: 5%
+  // - >= 6000: 6%
+  // Se houver cupom, subtrai o valor percentual do cupom da taxa base (mínimo 0)
+  let baseFeeRate: number;
+  if (amountBRL < 1000) {
+    baseFeeRate = 0.1;
+  } else if (amountBRL < 6000) {
+    baseFeeRate = 0.05;
   } else {
-    alfredFeeRate = cupom && cupom.trim() !== '' ? 0.0499 : 0.0599;
+    baseFeeRate = 0.06;
+  }
+
+  let alfredFeeRate: number = baseFeeRate;
+  if (cupom && cupom.trim() !== '' && localAlfredFeePercentage > 0) {
+    alfredFeeRate = Math.max(0, baseFeeRate - localAlfredFeePercentage / 100);
   }
 
   const alfredFee = amountBRL * alfredFeeRate;

@@ -1,7 +1,6 @@
-import { useWhiteLabel } from '@/context/WhiteLabelContext';
 import { PopoverGroup } from '@headlessui/react';
 import classNames from 'classnames';
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { LanguageTexts } from '../../../domain/locales/Language';
@@ -13,18 +12,19 @@ type NavLinksProps = {
   closeButton?: ReactNode;
   isLargeScreen: boolean;
   LinkCallBack?: () => void;
+  isMobileMenu?: boolean;
 };
 
-export function NavLinks({ LinkCallBack }: NavLinksProps) {
+export function NavLinks({
+  isVisible,
+  closeButton,
+
+  LinkCallBack,
+  isMobileMenu = false,
+}: NavLinksProps) {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { currentLang } = useCurrentLang();
-  const { config, loadHeaderFont } = useWhiteLabel();
-
-  // Certifique-se de que a fonte do cabeçalho seja carregada quando o componente for montado
-  useEffect(() => {
-    loadHeaderFont();
-  }, [loadHeaderFont]);
 
   const Links = [
     {
@@ -56,31 +56,31 @@ export function NavLinks({ LinkCallBack }: NavLinksProps) {
     navigate(path);
   };
 
+  if (!isVisible) return null;
+
   return (
     <>
-      <PopoverGroup className="flex flex-row items-center justify-center gap-x-1 sm:gap-x-2 flex-wrap">
+      <PopoverGroup
+        className={classNames(
+          isMobileMenu
+            ? 'flex flex-col items-center justify-center gap-y-2 w-full'
+            : 'hidden md:flex flex-row items-center justify-center gap-x-1 sm:gap-x-2 flex-wrap',
+        )}
+      >
+        {closeButton && isMobileMenu && (
+          <div className="w-full flex justify-end p-2">{closeButton}</div>
+        )}
+
         {Links.map((link, index) => (
           <button
             key={index}
             onClick={() => handleOnLink(link.path, LinkCallBack)}
             className={classNames(
-              'text-xl sm:text-2xl lg:text-3xl font-extralight leading-6 px-3 sm:px-5 py-2 transition-all text-center',
-              'hover:bg-opacity-20 duration-300 ease-in-out',
-              'w-auto',
-              'heading-font', // Classe que receberá a fonte dinâmica
+              'text-xl sm:text-2xl lg:text-3xl font-extralight leading-6 text-white px-3 sm:px-5 py-2 transition-all text-center',
+              'hover:bg-white hover:text-black duration-300 ease-in-out',
+              'font-pixelade',
+              isMobileMenu ? 'w-full' : 'w-auto',
             )}
-            style={{
-              color: config.colors.text,
-              fontFamily: `var(--font-headings, '${config.fonts.headings}')`, // Aplicação direta da fonte
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = config.colors.text;
-              e.currentTarget.style.color = config.colors.background;
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '';
-              e.currentTarget.style.color = config.colors.text;
-            }}
           >
             {link.label}
           </button>

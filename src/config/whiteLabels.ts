@@ -110,7 +110,7 @@ export function getConfigByDomain(domain: string): WhiteLabelConfig {
     }
   }
 
-  return alfredConfig;
+  return johnGaltConfig;
 }
 
 export function getCurrentConfig(): WhiteLabelConfig {

@@ -74,7 +74,6 @@ export default function ConfirmInfosModal({
   network,
   coldWallet,
   paymentMethod,
-  transactionNumber,
   cupom,
   alfredFeePercentage,
 }: ConfirmInfosModalProps) {
@@ -124,32 +123,36 @@ export default function ConfirmInfosModal({
   return (
     <div
       className="fixed inset-0 flex items-center justify-center z-50 overflow-y-auto"
-      style={{ backgroundColor: `${config.colors.background}80` }}
+      style={{ backgroundColor: `${config.colors.background}CC` }} // Mais escuro
     >
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
+        initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.9 }}
-        transition={{ duration: 0.3 }}
-        className="p-6 rounded-xl max-w-lg shadow-lg relative w-full max-h-[90vh] overflow-y-auto"
+        exit={{ opacity: 0, scale: 0.96 }}
+        transition={{ duration: 0.22 }}
+        className="p-0 rounded-2xl max-w-lg shadow-2xl relative w-full max-h-[90vh] overflow-y-auto border"
         style={{
           scrollbarWidth: 'thin',
           scrollbarColor: `${config.colors.secondary} ${config.colors.backgroundSecondary}`,
           backgroundColor: config.colors.secondary,
+          borderColor: config.colors.primary,
         }}
       >
         <button
           onClick={onClose}
           className="absolute top-4 right-4 hover:opacity-80 transition"
-          style={{ color: config.colors.text }}
+          style={{ color: config.colors.primary }}
         >
           <XMarkIcon className="w-6 h-6" />
         </button>
 
-        <div className="text-center mb-6">
+        <div
+          className="text-center py-7 px-6 border-b"
+          style={{ borderColor: config.colors.primary }}
+        >
           <h2
-            className="text-2xl font-semibold"
-            style={{ color: config.colors.text }}
+            className="text-2xl font-bold tracking-tight"
+            style={{ color: config.colors.primary }}
           >
             {t('confirm_infos.title')}
           </h2>
@@ -161,73 +164,79 @@ export default function ConfirmInfosModal({
           </p>
         </div>
 
-        <div className="space-y-6" style={{ color: config.colors.text }}>
+        <div
+          className="space-y-6 px-6 py-7"
+          style={{ color: config.colors.text }}
+        >
           {/* Seção de Valor */}
           <div
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: config.colors.backgroundSecondary }}
+            className="p-4 rounded-xl flex flex-col gap-2 border"
+            style={{
+              backgroundColor: config.colors.backgroundSecondary,
+              borderColor: config.colors.primary,
+            }}
           >
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-2 mb-1">
               <CurrencyDollarIcon
-                className="w-6 h-6"
+                className="w-5 h-5"
                 style={{ color: config.colors.primary }}
               />
-              <h3 className="text-lg font-semibold">
+              <h3 className="text-base font-semibold">
                 {t('confirm_infos.amount_section.title')}
               </h3>
             </div>
-            <p>
-              <span className="text-xl font-bold">{fiatAmount}</span>{' '}
-              {fiatType.toUpperCase()}
-            </p>
-            <p>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
+              <span className="text-xl font-bold">{fiatAmount}</span>
+              <span className="text-base font-medium">
+                {fiatType.toUpperCase()}
+              </span>
+            </div>
+            <div className="text-sm mt-1">
               {t('confirm_infos.amount_section.crypto_label')}{' '}
-              <span className="text-xl font-bold">
+              <span className="font-bold">
                 {cryptoAmount} {cryptoType.toUpperCase()}
               </span>
-            </p>
+            </div>
           </div>
 
           {/* Toggle Meus Dados */}
           <div
-            className="p-4 rounded-lg cursor-pointer"
-            style={{ backgroundColor: config.colors.backgroundSecondary }}
+            className="p-4 rounded-xl border cursor-pointer"
+            style={{
+              backgroundColor: config.colors.backgroundSecondary,
+              borderColor: config.colors.primary,
+            }}
             onClick={() => setIsDataVisible(!isDataVisible)}
           >
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-2">
               <InformationCircleIcon
-                className="w-6 h-6"
+                className="w-5 h-5"
                 style={{ color: config.colors.primary }}
               />
-              <h3 className="text-lg font-semibold">
+              <h3 className="text-base font-semibold">
                 {t('confirm_infos.user_data_section.title')}
               </h3>
               {isDataVisible ? (
                 <ChevronUpIcon
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                   style={{ color: config.colors.primary }}
                 />
               ) : (
                 <ChevronDownIcon
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                   style={{ color: config.colors.primary }}
                 />
               )}
             </div>
             {isDataVisible && (
-              <div className="mt-4 space-y-2">
+              <div className="mt-3 space-y-1 text-sm pl-1">
                 <p>
                   <strong>
                     {t('confirm_infos.user_data_section.wallet')}:
                   </strong>{' '}
                   {coldWallet}
                 </p>
-                <p>
-                  <strong>
-                    {t('confirm_infos.user_data_section.contact_number')}:
-                  </strong>{' '}
-                  {transactionNumber}
-                </p>
+                <p></p>
                 <p>
                   <strong>
                     {t('confirm_infos.user_data_section.coupon')}:
@@ -252,32 +261,35 @@ export default function ConfirmInfosModal({
 
           {/* Toggle Taxas */}
           <div
-            className="p-4 rounded-lg cursor-pointer"
-            style={{ backgroundColor: config.colors.backgroundSecondary }}
+            className="p-4 rounded-xl border cursor-pointer"
+            style={{
+              backgroundColor: config.colors.backgroundSecondary,
+              borderColor: config.colors.primary,
+            }}
             onClick={() => setIsTaxVisible(!isTaxVisible)}
           >
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-2">
               <ArrowPathIcon
-                className="w-6 h-6"
+                className="w-5 h-5"
                 style={{ color: config.colors.primary }}
               />
-              <h3 className="text-lg font-semibold">
+              <h3 className="text-base font-semibold">
                 {t('confirm_infos.fees_section.title')}
               </h3>
               {isTaxVisible ? (
                 <ChevronUpIcon
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                   style={{ color: config.colors.primary }}
                 />
               ) : (
                 <ChevronDownIcon
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                   style={{ color: config.colors.primary }}
                 />
               )}
             </div>
             {isTaxVisible && (
-              <div className="mt-4 space-y-2">
+              <div className="mt-3 space-y-1 text-sm pl-1">
                 {cryptoType.toLowerCase() === 'usdt' ? (
                   <p>
                     <strong>
@@ -321,34 +333,39 @@ export default function ConfirmInfosModal({
 
           {/* Resumo Final */}
           <div
-            className="p-4 rounded-lg"
-            style={{ backgroundColor: config.colors.backgroundSecondary }}
+            className="p-4 rounded-xl border"
+            style={{
+              backgroundColor: config.colors.backgroundSecondary,
+              borderColor: config.colors.primary,
+            }}
           >
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-2 mb-1">
               <ArrowPathIcon
-                className="w-6 h-6"
+                className="w-5 h-5"
                 style={{ color: config.colors.primary }}
               />
-              <h3 className="text-lg font-semibold">
+              <h3 className="text-base font-semibold">
                 {t('confirm_infos.final_summary.title')}
               </h3>
             </div>
-            <p>
-              <strong>
-                {t('confirm_infos.final_summary.expected_amount')}:
-              </strong>{' '}
-              R$ {expectedAmount.toFixed(2)}
-            </p>
-            <p>
-              <strong>
-                {t('confirm_infos.final_summary.expected_amount_crypto')}:
-              </strong>{' '}
-              {expectedAmountCrypto} {cryptoType.toUpperCase()}
-            </p>
+            <div className="flex flex-col gap-1 text-sm">
+              <span>
+                <strong>
+                  {t('confirm_infos.final_summary.expected_amount')}:
+                </strong>{' '}
+                R$ {expectedAmount.toFixed(2)}
+              </span>
+              <span>
+                <strong>
+                  {t('confirm_infos.final_summary.expected_amount_crypto')}:
+                </strong>{' '}
+                {expectedAmountCrypto} {cryptoType.toUpperCase()}
+              </span>
+            </div>
           </div>
 
           {/* Botões */}
-          <div className="flex justify-between space-x-4 mt-6">
+          <div className="flex justify-between gap-4 mt-7">
             <Button variant="outline" onClick={onClose}>
               {t('confirm_infos.buttons.cancel')}
             </Button>
