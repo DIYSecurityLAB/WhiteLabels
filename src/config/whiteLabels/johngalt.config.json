@@ -30,16 +30,16 @@
     "headings": "Orbitron"
   },
   "logo": {
-    "main": "/src/view/assets/johngalt/logo.png",
-    "mainDark": "/src/view/assets/johngalt/logo_dark.png",
-    "mainLight": "/src/view/assets/johngalt/logo_light.png",
-    "type": "/src/view/assets/johngalt/logo_type.svg",
-    "typeDark": "/src/view/assets/johngalt/logo_type_dark.svg",
-    "typeLight": "/src/view/assets/johngalt/logo_type_light.svg",
-    "alternative": "/src/view/johngalt/assets/logo/logo_alt.png",
-    "icon": "/src/view/assets/johngalt/logo.png",
-    "footer": "/src/view/assets/johngalt/logo_footer.svg",
-    "levelIcon": "/src/view/assets/johngalt/logo.png",
+    "main": "/johngalt/logo.png",
+    "mainDark": "/johngalt/logo_dark.png",
+    "mainLight": "/johngalt/logo_light.png",
+    "type": "/johngalt/logo_type.svg",
+    "typeDark": "/johngalt/logo_type_dark.svg",
+    "typeLight": "/johngalt/logo_type_light.svg",
+    "alternative": "/johngalt/logo.png",
+    "icon": "/johngalt/logo.png",
+    "footer": "/johngalt/logo_footer.svg",
+    "levelIcon": "/johngalt/logo.png",
     "applyLevelIconFilter": true
   },
   "background": {
