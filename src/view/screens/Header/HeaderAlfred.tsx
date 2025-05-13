@@ -156,11 +156,11 @@ export default function Header() {
                   className="flex items-center gap-x-2"
                   style={{ color: config.colors.text }}
                 >
-                  {/* Logo fixa */}
+                  {/* Logo fixa com filtro condicional */}
                   <img
                     src={config.logo.icon}
                     alt="Logo"
-                    className="w-6 h-6 filter brightness-0 invert"
+                    className={`w-6 h-6${config.logo.applyLevelIconFilter ? ' filter brightness-0 invert' : ''}`}
                   />
                   <div className="flex flex-col items-start">
                     <span className="font-pixelade inline text-2xl font-semibold">
@@ -197,11 +197,11 @@ export default function Header() {
                           borderColor: config.colors.primary,
                         }}
                       >
-                        {/* Logo fixa */}
+                        {/* Logo fixa com filtro condicional */}
                         <img
                           src={config.logo.icon}
                           alt="Logo"
-                          className="w-16 h-16 filter brightness-0 invert"
+                          className={`w-16 h-16${config.logo.applyLevelIconFilter ? ' filter brightness-0 invert' : ''}`}
                         />
                       </div>
                       <span className="font-bold text-xl mb-1">
@@ -254,11 +254,11 @@ export default function Header() {
                   border: `1px solid transparent`,
                 }}
               >
-                {/* Logo fixa */}
+                {/* Logo fixa com filtro condicional */}
                 <img
                   src={config.logo.icon}
                   alt="Logo"
-                  className="w-6 h-6 filter brightness-0 invert"
+                  className={`w-6 h-6${config.logo.applyLevelIconFilter ? ' filter brightness-0 invert' : ''}`}
                 />
                 Faça login
               </button>
