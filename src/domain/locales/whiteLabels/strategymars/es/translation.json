@@ -86,7 +86,7 @@
     "above1000": "4,99% para transacciones hasta 6.000 BRL.",
     "below1000": "Tarifa variable con cupón de influencer.",
     "dailyLimit2": "De 6.001 BRL en adelante:",
-    "fixedRate": "5,99% de tarifa fija.",
+    "fixedRate": "6,99% de tarifa fija.",
     "couponsTitle": "Cupón",
     "coupons": "Para valores hasta 6.000 BRL, al utilizar un cupón, la tarifa varía según el influencer. Para valores superiores a 6.000 BRL, al utilizar un cupón, la tarifa se reduce a 4,99%.",
     "convertibilityRates": "Las tarifas son variables para transacciones que involucran Pix a LBTC y envío de Bitcoin on-chain.",

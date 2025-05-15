@@ -86,7 +86,7 @@
     "above1000": "4.99% for transactions up to 6,000 BRL.",
     "below1000": "Variable fee with influencer coupon.",
     "dailyLimit2": "From 6,001 BRL onwards:",
-    "fixedRate": "5.99% fixed fee.",
+    "fixedRate": "6.99% fixed fee.",
     "couponsTitle": "Coupon",
     "coupons": "For amounts up to 6,000 BRL, when using a coupon, the fee varies according to the influencer. For amounts above 6,000 BRL, when using a coupon, the fee is reduced to 4.99%.",
     "convertibilityRates": "Rates are variable for transactions involving Pix to LBTC and on-chain Bitcoin sending.",

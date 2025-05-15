@@ -77,22 +77,27 @@ export function useConfirmInfos(
       : fiatAmountNum * (usdToBrl || 0);
 
   // NOVA LÓGICA DE TAXAS FIXAS E CUPOM
-  // - < 1000: 10%
-  // - 1000 <= x < 6000: 5%
-  // - >= 6000: 6%
-  // Se houver cupom, subtrai o valor percentual do cupom da taxa base (mínimo 0)
+  // - 200 BRL até 6000 BRL: 4.99%
+  // - > 6000 BRL: 6.99%
   let baseFeeRate: number;
-  if (amountBRL < 1000) {
-    baseFeeRate = 0.1;
-  } else if (amountBRL < 6000) {
-    baseFeeRate = 0.05;
+  if (amountBRL <= 6000) {
+    baseFeeRate = 0.0499; // 4.99%
   } else {
-    baseFeeRate = 0.06;
+    baseFeeRate = 0.0699; // 6.99%
   }
 
   let alfredFeeRate: number = baseFeeRate;
   if (cupom && cupom.trim() !== '' && localAlfredFeePercentage > 0) {
-    alfredFeeRate = Math.max(0, baseFeeRate - localAlfredFeePercentage / 100);
+    // Valor do cupom (em percentual)
+    const cupomDiscountPercentage = localAlfredFeePercentage / 100;
+
+    if (amountBRL <= 6000) {
+      // Até 6000 BRL: aplica o desconto total do cupom
+      alfredFeeRate = Math.max(0, baseFeeRate - cupomDiscountPercentage);
+    } else {
+      // Acima de 6000 BRL: aplica metade do desconto do cupom
+      alfredFeeRate = Math.max(0, baseFeeRate - cupomDiscountPercentage / 2);
+    }
   }
 
   const alfredFee = amountBRL * alfredFeeRate;
