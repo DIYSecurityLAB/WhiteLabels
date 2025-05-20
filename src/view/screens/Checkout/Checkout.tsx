@@ -12,7 +12,7 @@ export default function Checkout() {
   const { config, getLogoByTheme } = useWhiteLabel();
 
   const [transactionType, setTransactionType] = useState<'buy' | 'sell'>('buy');
-  const [isMaintenanceMode] = useState(true); // modo de manutenção
+  const [isMaintenanceMode] = useState(false); // modo de manutenção
 
   const toggleTransactionType = () => {
     setTransactionType((prevType) => (prevType === 'buy' ? 'sell' : 'buy'));
