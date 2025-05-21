@@ -1,12 +1,10 @@
 import { useWhiteLabel } from '@/context/WhiteLabelContext';
 import { Background } from '@/view/components/BackgroundAnimatedProduct';
 import { motion } from 'framer-motion';
-import { CSSProperties, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaWhatsapp } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import logoSucces from '../../assets/Check_Tela_Alfred.png';
-import TalkBallon from '../../assets/talk.png';
 import { ROUTES } from '../../routes/Routes';
 import { useCurrentLang } from '../../utils/useCurrentLang';
 
@@ -14,79 +12,13 @@ export function PaymentAlfredSuccess() {
   const { t } = useTranslation();
   const { currentLang } = useCurrentLang();
   const navigate = useNavigate();
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const { config } = useWhiteLabel();
-
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   const handleOnLink = (path: string, callback?: () => void) => {
     if (callback) {
       callback();
     }
     navigate(path);
-  };
-
-  const alfredStyle: CSSProperties = {
-    position: 'absolute',
-    top: '7rem',
-    right: windowWidth < 768 ? '3rem' : '5rem',
-    width: windowWidth < 768 ? '12rem' : '18rem',
-    height: 'auto',
-    transform: 'rotate(12deg)',
-  };
-
-  const talkBallonStyle: CSSProperties = {
-    position: 'absolute',
-    top: '2rem',
-    right: windowWidth < 768 ? '2rem' : '5rem',
-    width: windowWidth < 768 ? '6.3rem' : '8rem',
-    zIndex: 10,
-  };
-
-  const textStyle: CSSProperties = {
-    position: 'absolute',
-    top:
-      windowWidth < 768
-        ? currentLang === 'es'
-          ? '1rem' // Ajuste para espanhol quando a tela for pequena
-          : currentLang === 'en'
-            ? '1.5rem' // Ajuste para inglês quando a tela for pequena
-            : '1.7rem' // Ajuste para português quando a tela for pequena
-        : currentLang === 'es'
-          ? '1.4rem' // Ajuste para espanhol quando a tela for grande
-          : currentLang === 'en'
-            ? '2rem' // Ajuste para inglês quando a tela for grande
-            : '2.4rem', // Ajuste para português quando a tela for grande
-    left:
-      windowWidth < 768
-        ? currentLang === 'es'
-          ? '0.2rem' // Ajuste para espanhol quando a tela for pequena
-          : currentLang === 'en'
-            ? '0.2rem' // Ajuste para inglês quando a tela for pequena
-            : '0.5rem' // Ajuste para português quando a tela for pequena
-        : currentLang === 'es'
-          ? '0.2rem' // Ajuste para espanhol quando a tela for grande
-          : currentLang === 'en'
-            ? '0.2rem' // Ajuste para inglês quando a tela for grande
-            : '1rem', // Ajuste para português quando a tela for grande
-    fontSize:
-      windowWidth < 768
-        ? currentLang === 'es'
-          ? '1rem' // Ajuste para espanhol quando a tela for pequena
-          : currentLang === 'en'
-            ? '0.9rem' // Ajuste para inglês quando a tela for pequena
-            : '1rem' // Ajuste para português quando a tela for pequena
-        : currentLang === 'es'
-          ? '1.3rem' // Ajuste para espanhol quando a tela for grande
-          : currentLang === 'en'
-            ? '1rem' // Ajuste para inglês quando a tela for grande
-            : '1.2rem', // Ajuste para português quando a tela for grande
-    fontWeight: 'bold',
-    color: 'black',
   };
 
   return (
@@ -98,31 +30,6 @@ export function PaymentAlfredSuccess() {
       style={{ color: config.colors.text }}
     >
       <Background />
-      <motion.img
-        src={config.logo.main}
-        alt={`${config.name} Logo`}
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-        style={alfredStyle}
-      />
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        style={talkBallonStyle}
-      >
-        <img
-          src={TalkBallon}
-          alt="Balão de fala"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'contain',
-          }}
-        />
-        <p style={textStyle}>{t('paymentSuccess.Ballon')}</p>
-      </motion.div>
 
       <motion.div
         initial={{ scale: 0.5, opacity: 0 }}
